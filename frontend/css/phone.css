@@ -3,6 +3,7 @@
 :root {
  --iphone-width: 18vw;
  --iphone-height: 70vh;
+ --icon-offset: 7vh;
 }
 
 
@@ -93,7 +94,7 @@ body:after {
 
 
 .icons{
-  top: calc(var(--iphone-height) - 7vh);
+  top: calc(var(--iphone-height) - var(--icon-offset));
   width: var(--iphone-width);
   height: 7vh;
   position: relative;
@@ -105,5 +106,51 @@ body:after {
 }
 
 .icons .icon{
-  height: 5vh;
+  height: var(--icon-offset);
+  width: calc(var(--iphone-width)/3);
+  padding: 0;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.icon::after {
+  content: '';
+  background: #3f436b;
+  width: 5px;
+  top: 20px;
+  height: 5px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+}
+
+
+.icons .icon-l{
+  border-radius: 0px 0px 0px 40px;
+}
+
+.icons .icon-r{
+  border-radius: 0px 0px 40px 0px;
+}
+
+/* .icons .icon:hover{
+  background: #3f436b;
+} */
+
+.icons .icon img{
+  position: absolute;
+  height: calc(var(--icon-offset) - 4vh);
+}
+
+.icons .icon .hover_img{
+  opacity: 0;
+}
+
+.icons .icon:hover .hover_img{
+  opacity: 1;
+}
+
