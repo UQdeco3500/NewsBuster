@@ -1,2 +1,40 @@
 
+:root {
+    --iphone-width: 18vw;
+    --iphone-height: 70vh;
+    --icon-offset: 7vh;
+   }
 
+.map-search{
+    width: calc(var(--iphone-width)*3/4);
+    height: calc(var(--iphone-height)/14);
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border-radius: 40px;
+}
+
+.map-search div{
+    background: #fff;
+    border-radius: 40px;
+}
+
+.map-search .input-group{
+    border-color: #2E5A88;
+    border-style: solid;
+}
+
+.map-search input{
+    border-radius: 40px;
+    border-color: #2E5A88;
+    ;
+}
+
+
+#map {
+
+    width: calc(var(--iphone-width));
+    height: calc(var(--iphone-height) - var(--iphone-height)/14 - 4vh);
+    position: relative;
+    border-radius: 0 0 50px 50px;
+    z-index: 0;
+}
