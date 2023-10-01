@@ -1,10 +1,11 @@
-
 :root {
     --iphone-width: 18vw;
     --iphone-height: 70vh;
     --icon-offset: 7vh;
+    --theme-color: #2E5A88;
    }
 
+/* Map (Market) Page */
 .map-search{
     width: calc(var(--iphone-width)*3/4);
     height: calc(var(--iphone-height)/14);
@@ -12,6 +13,26 @@
     margin-bottom: 2vh;
     border-radius: 40px;
 }
+
+.iphone-mask{
+    position: absolute;
+    border-radius: 40px;
+    width: var(--iphone-width);
+    height: var(--iphone-height);
+    background: var(--theme-color);
+    opacity: 0.6;
+    z-index: 3;
+    visibility: hidden;
+}
+
+.map-icon::after{
+    opacity: 1;
+}
+
+.icons .map-icon .hover_img{
+    opacity: 1;
+  }
+  
 
 .map-search div{
     background: #fff;
@@ -29,12 +50,119 @@
     ;
 }
 
-
 #map {
-
     width: calc(var(--iphone-width));
     height: calc(var(--iphone-height) - var(--iphone-height)/14 - 4vh);
     position: relative;
     border-radius: 0 0 50px 50px;
     z-index: 0;
+}
+
+.map-popup-card{
+    flex-direction: row;
+    width: calc(var(--iphone-width)/4);
+    height: calc(var(--iphone-height)/4);
+}
+
+.map-popup-card img{
+    width: calc(var(--iphone-width)/3);
+
+}
+
+.map-popup-card .card-body{
+    width: calc(var(--iphone-width)/2.1);
+    height: calc(var(--iphone-width)/4);
+}
+
+.map-popup-card .card-body h5{
+    font-size: 0.9em;
+}
+
+.map-popup-card .card-body p{
+    font-size: 0.7em;
+}
+
+.map-popup-card .btn{
+    width: calc(var(--iphone-width)/3.2);
+    height: calc(var(--iphone-width)/12);
+    font-size: 0.7em;
+}
+
+.map-popup-card img{
+    border-radius: 15px;
+}
+
+.leaflet-popup-content{
+    width: calc(var(--iphone-width)/1.5);
+}
+
+.map-art-info{
+    position: absolute;
+    top: calc(var(--iphone-height)/8);
+    width: calc(var(--iphone-width)/1.1);
+    height: calc(var(--iphone-height)/2.3);
+    z-index: 2;
+    visibility: hidden;
+}
+
+.map-art-info .card-body{
+    width: calc(var(--iphone-width)/1.1);
+    height: calc(var(--iphone-height)/2.2);
+}
+
+.map-art-info h5{
+    font-size: 0.9em;
+}
+
+.map-art-info h4{
+    font-size: 0.7em;
+}
+
+.map-art-info p{
+    font-size: 0.5em;
+}
+
+.map-art-info .btn{
+    width: calc(var(--iphone-width)/3.2);
+    height: calc(var(--iphone-width)/12);
+    font-size: 0.5em;
+}
+
+.map-detailed-info{
+    top: calc(var(--iphone-height)/5);
+    width: calc(var(--iphone-width)/1.5);
+    height: calc(var(--iphone-height)/1.7);
+    z-index: 4;
+    visibility: hidden;
+}
+
+.map-detailed-info .card-body{
+    width: calc(var(--iphone-width)/1.5);
+    height: calc(var(--iphone-height)/1.7);
+}
+.map-detailed-info .btn{
+    width: calc(var(--iphone-width)/1.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.map-detailed-info i{
+    font-size: 3em;
+}
+
+
+.map-detailed-info h5{
+    color: var(--theme-color);
+}
+.map-detailed-info h4{
+    color: var(--theme-color);
+}
+.map-detailed-info p{
+    color: var(--theme-color);
+}
+
+.map-detailed-mask{
+    z-index: 3;
 }
