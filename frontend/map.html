@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
+    <script src="link.js"></script>
+
     <title>Mobile & Social</title>
 </head>
 <body class="background">
@@ -72,7 +74,7 @@
 
 
         <div class="icons">
-            <div class= "icon icon-l map-icon">
+            <div class= "icon icon-l cur-icon">
                 <img class= "non_hover"  src="img/icon/Gallery.png">
                 <img class= "hover_img hover_img-l" src="img/icon/Gallery (hovered colour).png">
             </div>
@@ -125,7 +127,6 @@
             document.getElementById("map-Paris").style.visibility="visible";
 
          });
-
     })
 
     var close_Paris_btn = document.getElementById(("map-check-out-btn-Paris"))
@@ -149,5 +150,12 @@
     });
 
     
+    document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
+        window.location.href = 'map.html';
+    });
+
+    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
+        window.location.href = 'detect.html';
+    });
 </script>
 </html>

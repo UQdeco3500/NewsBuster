@@ -3,13 +3,15 @@
     --iphone-height: 70vh;
     --icon-offset: 7vh;
     --theme-color: #2E5A88;
+    --mask-color: #f6f6f6;
+
    }
 
 /* Map (Market) Page */
 .map-search{
     width: calc(var(--iphone-width)*3/4);
     height: calc(var(--iphone-height)/14);
-    margin-top: 2vh;
+    margin-top: 3.5vh;
     margin-bottom: 2vh;
     border-radius: 40px;
 }
@@ -19,17 +21,17 @@
     border-radius: 40px;
     width: var(--iphone-width);
     height: var(--iphone-height);
-    background: var(--theme-color);
+    background: var(--mask-color);
     opacity: 0.6;
     z-index: 3;
     visibility: hidden;
 }
 
-.map-icon::after{
+.cur-icon::after{
     opacity: 1;
 }
 
-.icons .map-icon .hover_img{
+.icons .cur-icon .hover_img{
     opacity: 1;
   }
   
@@ -52,7 +54,7 @@
 
 #map {
     width: calc(var(--iphone-width));
-    height: calc(var(--iphone-height) - var(--iphone-height)/14 - 4vh);
+    height: calc(var(--iphone-height) - var(--iphone-height)/14 - 4vh - 2vh);
     position: relative;
     border-radius: 0 0 50px 50px;
     z-index: 0;
@@ -101,7 +103,7 @@
     top: calc(var(--iphone-height)/8);
     width: calc(var(--iphone-width)/1.1);
     height: calc(var(--iphone-height)/2.3);
-    z-index: 2;
+    z-index: 4;
     visibility: hidden;
 }
 
@@ -166,3 +168,103 @@
 .map-detailed-mask{
     z-index: 3;
 }
+
+
+/* Detect Page */
+.detect-search{
+    width: calc(var(--iphone-width)*3/4);
+    height: calc(var(--iphone-height)/14);
+    margin-top: 3.5vh;
+    margin-bottom: 0.5vh;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detect-container {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: calc(var(--iphone-width));
+    height: calc(var(--iphone-height) - var(--iphone-height)/14 - 4vh);
+    border-radius: 50px;
+
+}
+
+.detect-container .figure img{
+    width: calc(var(--iphone-width));
+    height: calc(var(--iphone-height) - var(--iphone-height)/14 - 4vh);
+    position: relative;
+    border-radius: 0 0 50px 50px;
+    z-index: 0;
+    
+}
+
+.detect-upload-img{
+    /* left: calc(var(--iphone-width)/2.3); */
+    
+    left: calc(var(--iphone-width)/3);
+    top: calc((var(--iphone-height) - var(--iphone-height)/14 - 4vh)/2);
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+
+.detect-upload-img i{
+    font-size: 5em;
+    color: #fff;
+}
+
+.detect-menu{
+    position: absolute;
+    width: calc(var(--iphone-width));
+    top: calc(var(--iphone-height) - 4*var(--icon-offset) - 4.5vh);
+    visibility: hidden;
+    z-index: 3;
+	box-shadow:0px -15px 50px -30px black;
+    border-radius: 40px;
+}
+
+
+.detect-menu-items{
+    border-radius: 40px;
+}
+
+.detect-art{
+    top: calc(var(--iphone-height)/3.5);
+    height: calc(var(--iphone-height)/2);
+    width: calc(var(--iphone-width)/1.3);
+    z-index: 4;
+    visibility: hidden;
+}
+
+.detect-art .card-body{
+    height: calc(var(--iphone-height)/8);
+    width: calc(var(--iphone-width)/1.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detect-art #detect-cancel{
+    left: calc(var(--iphone-height)/3);
+    top: -30px;
+
+    position: absolute;
+    z-index: 10;
+}
+
+#detect-cancel i{
+    font-size: 5em;
+    color: #fff;
+}
+
+
+/* 
+.list-group {
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+} */

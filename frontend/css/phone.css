@@ -49,13 +49,13 @@ body:after {
 }
 
 
-/* .iphone-x:before {
+.iphone-x:before {
   width: 56%;
   height: 3vh;
   position: absolute;
   background-color: #1f1f1f;
   border-radius: 0px 0px 40px 40px;
-} */
+}
 
 /* .iphone-x i, .iphone-x b, .iphone-x s, .iphone-x span {
   position: absolute;
@@ -108,6 +108,15 @@ body:after {
   align-items: center;
   background: #F5F5F5;
   border-radius: 0px 0px 40px 40px;
+  z-index: 3;
+
+}
+
+.icons .icon a{
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  opacity: 1;
 }
 
 .icons .icon{
