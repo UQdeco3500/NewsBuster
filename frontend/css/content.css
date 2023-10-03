@@ -1,0 +1,63 @@
+:root {
+  --iphone-width: 18vw;
+  --iphone-height: 70vh;
+  --icon-offset: 7vh;
+  --theme-color: #2E5A88;
+  --mask-color: #f6f6f6;
+
+ }
+
+.content-background{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+
+.home-profile{
+  height: 20vh;
+  width: 80vw;
+  margin-top: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content img{
+  height: 25vw;
+  width: 25vw;
+}
+
+.home-trending-title{
+  width: 80vw;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.home-arts{
+  width: 80vw;
+}
+
+.home-arts .home-art-card{
+  margin-top: 10px;
+  width: 35vw;
+  border-radius: 10px;
+}
+
+.card-img-top{
+  border-radius: 10px 10px 0 0;
+}
+
+.home-art-card p{
+  font-size: 0.25rem;
+  margin-bottom: 0;
+}
+
+.home-art-card .card-body{
+  padding: 0.5rem;
+}
+
