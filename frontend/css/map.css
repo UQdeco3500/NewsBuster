@@ -1,0 +1,17 @@
+/* https://codepen.io/adielhercules/pen/dJJGBQ */
+
+
+.map-background{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  flex-direction: column;
+}
+
+.map-search div{
+  background: #fff;
+  border-radius: 40px;
+  width: 40vw;
+  height: 40;
+}

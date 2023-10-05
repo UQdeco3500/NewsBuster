@@ -55,6 +55,7 @@ body:after {
   position: absolute;
   background-color: #1f1f1f;
   border-radius: 0px 0px 40px 40px;
+  z-index: 100;
 }
 
 /* .iphone-x i, .iphone-x b, .iphone-x s, .iphone-x span {
