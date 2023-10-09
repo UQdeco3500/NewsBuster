@@ -281,7 +281,6 @@
     border-radius: 20px;
     border-width: thin;
     background-color: #fff;
-    margin-bottom: 10px;
     
 }
 
@@ -293,16 +292,11 @@
 .detect-menu img{
     height: calc(var(--iphone-height)/20);
     width: calc(var(--iphone-height)/20);
-    position: absolute;
 }
 
 .detect-menu p{
     font-size: 0.7rem;
     margin-bottom: 0;
-}
-
-.detect-menu div:hover .non-hover{
-    opacity: 0;
 }
 
 
