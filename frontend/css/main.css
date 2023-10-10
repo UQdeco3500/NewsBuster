@@ -235,12 +235,12 @@
 
 .detect-menu{
     position: absolute;
-    width: calc(var(--iphone-width)/1.5);
-    top: calc(var(--iphone-height)/3);
-    height: calc(var(--iphone-height)/2.5);
+    width: calc(var(--iphone-width)/1.3);
+    top: calc(var(--iphone-height)/3.2);
+    height: calc(var(--iphone-height)/2);
     visibility: hidden;
     z-index: 3;
-	/* box-shadow:0px -15px 50px -30px black; */
+	box-shadow:0px -15px 50px -30px black;
     border-radius: 30px;
     border: solid;
     border-color: var(--theme-color);
@@ -255,42 +255,80 @@
     top: 5px;
     left: 5px;
     border-width: thin;
-      stroke-width: 10;
+    stroke-width: 10;
 
 }
 .detect-menu {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     padding: 10px;
     box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
 
 }
 
-.detect-menu div{
+.detect-menu .detect-menu-form{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
-    height: calc(var(--iphone-height)/9);
-    width: calc(var(--iphone-height)/9);
-    color: var(--theme-color);
-    border: solid;
+    height: calc(var(--iphone-height)/2.2);
+    width: calc(var(--iphone-width)/1.5);
+    /* background-color: var(--theme-color); */
+    /* border: solid; */
     border-color: #000;
     border-radius: 20px;
     border-width: thin;
-    background-color: #fff;
     margin-bottom: 10px;
-    
 }
 
-.detect-menu div:hover{
+.detect-menu-form label{
+    margin-bottom: 0;
+}
+
+.detect-menu .detect-menu-form #imagePreview{
+    height: calc(var(--iphone-height)/4);
+    width: calc(var(--iphone-height)/4);
+
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: var(--button-border-radius);
+    background-size: calc(var(--iphone-height)/4) calc(var(--iphone-height)/4);
+}
+
+.detect-menu-input-container{
+    /* height: calc(var(--iphone-height)/5); */
+    width: calc(var(--iphone-width)/1.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.detect-menu-input-container .btn{
+    font-size: 0.6rem;
+}
+
+.custom-file-input{
+    height: 0px;
+}
+.detect-menu-input-container .label{
+    height: calc(var(--iphone-height)/11);
+}
+
+/* 
+.detect-menu label{
+    height: 10px;
+}
+
+
+.detect-menu label:hover{
     background-color:var(--theme-color);
     color: #fff;
-}
+} */
 
-.detect-menu img{
+/* .detect-menu img{
     height: calc(var(--iphone-height)/20);
     width: calc(var(--iphone-height)/20);
     position: absolute;
@@ -299,7 +337,7 @@
 .detect-menu p{
     font-size: 0.7rem;
     margin-bottom: 0;
-}
+} */
 
 .detect-menu div:hover .non-hover{
     opacity: 0;
@@ -318,6 +356,11 @@
     flex-direction: column;
     box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
 
+}
+
+.detect-art #detect-detection-img{
+    height: calc(var(--iphone-height)/3);
+    border-radius: var(--button-border-radius);
 }
 
 .detect-art .card{
@@ -689,3 +732,22 @@
     margin-top: 10px;
     width: calc(var(--iphone-width)/2.6);
 }
+
+
+
+
+/* 
+#detect-choose-img{
+    background: url("../img/detect/Album.png");
+    background-size: calc(var(--iphone-height)/9) calc(var(--iphone-height)/9);
+}
+
+
+#detect-choose-img:hover{
+    background: url("../img/detect/album hovered colour.png");
+    background-color: var(--theme-color);
+    background-size: calc(var(--iphone-height)/9) calc(var(--iphone-height)/9);
+
+} */
+
+

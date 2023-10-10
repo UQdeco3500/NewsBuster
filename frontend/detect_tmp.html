@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/phone.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+    <script src="link.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>Mobile & Social</title>
+</head>
+<body class="background">
+    <div class="iphone-x">
+        <div class="iphone-mask" id="detect-phone-mask"></div>
+        <div class="rounded rounded-pill shadow-sm detect-search">
+            <h5> AI ART DETECTION</h5>
+        </div>
+
+        <div class="detect-container" id="detect-upload">
+            <div class="detect-background-outline">
+                <a href="#" class="btn btn-link text-primary detect-upload-img" id="detect-upload-img"><img src="./img/detect/upload.png"></a>
+                <h5>Click here to upload</h5>
+            </div>
+        </div>
+
+
+        <div class="detect-container" id="detect-res">
+            <div class="detect-res-outline">
+                <img src="./img/detect/Paris.png">
+            </div>
+            <div class="detect-report-container detect-prec">
+                <h5>Authentic Art</h5>
+                <div class="progress" data-value='90'>
+                    <span class="progress-left">
+                            <span class="progress-bar border-primary"></span>
+                    </span>
+                    <span class="progress-right">
+                            <span class="progress-bar border-primary"></span>
+                    </span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                      <div class="h6 font-weight-bold">90<sup class="small">%</sup></div>
+                    </div>
+                  </div>
+            </div>
+            <div class="detect-report-container">
+                <div class="card detect-art-profile">
+                    <div class="card-body">
+                        <p class="card-text">Artist:</p>
+                      <p class="card-text">Vincent van Gogh</p>
+                    </div>
+                    <img class="card-img-top" src="img/home/profile_1.png" alt="Card image cap">
+                </div>
+
+                <div class="card detect-art-profile detect-art-title">
+                    <div class="card-body">
+                        <p class="card-text">Title:</p>
+
+                      <p class="card-text">Starry Night</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="detect-report-container detect-report-share">
+               
+                <div class="card detect-art-profile detect-art-title">
+                    <div class="card-body">
+                        <p class="card-text">Date:</p>
+
+                      <p class="card-text">5/ 10</p>
+                    </div>
+                </div>
+
+                <div class="card detect-art-profile detect-art-title" id="detect-again-btn">
+                    <div class="card-body" >
+                      <p class="card-text">Detect again</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+         <div class="detect-menu" id="detect-menu" >
+            <a href="#" class="btn btn-link text-primary" id="detect-cancel-menu-btn"><i class="fa fa-times-circle-o"></i></a>
+
+              <div class="btn detect-menu-camera">
+                <img src="./img/detect/camera hovered colour.png">
+                <img class="non-hover" src="./img/detect/Camera.png">
+                <!-- <p>Camera</p> -->
+              </div>
+              <div class="btn detect-menu-albun" id="detect-choose-img">
+                <img src="./img/detect/album hovered colour.png">
+                <img class="non-hover" src="./img/detect/Album.png">
+                <!-- <p>Album</p> -->
+              </div>
+              <div class="btn detect-menu-camera">
+                <img src="./img/detect/file hovered colour.png">
+                <img class="non-hover" src="./img/detect/Files.png">
+                <!-- <p>Files</p> -->
+              </div>
+        </div>
+
+
+        <div class="map-art-info detect-art " id="detect-detection">
+            <a href="#" class="btn btn-link text-primary" id="detect-cancel"><i class="fa fa-times-circle-o"></i></a>
+            <div class="card">
+                <img class="card-img-top" src="img/map/Paris.png" alt="Card image cap">
+                <div class="card-body">
+                    <button class="button">
+                        <span class="submit">Submit</span>
+                        <span class="loading"><i class="fa fa-refresh"></i></span>
+                        <span class="check"><i class="fa fa-check"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="icons">
+            <div class= "icon icon-l">
+                <img class= "non_hover"  src="img/icon/Gallery.png">                
+                <img href="map.html" class= "hover_img hover_img-l" src="img/icon/Gallery (hovered colour).png">
+            </div>
+            <div class= "icon icon-l-m">
+                <img src="img/icon/Home.png">
+                <img class= "hover_img hover_img-m" src="img/icon/Home (hovered colour).png">
+            </div>
+            <div class= "icon icon-r-m cur-icon">
+                <img src="img/icon/Image upload.png">
+                <img class= "hover_img hover_img-r" src="img/icon/Image upload (hovered colour).png">
+            </div>
+            <div class= "icon icon-r">
+                <img src="img/icon/profile page.png">
+                <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var loading_time = 4;
+    var upload_btn = document.getElementById(("detect-upload-img"))
+    const button = document.querySelector('.button');
+    const submit = document.querySelector('.submit');
+
+    function toggleClass() {
+        this.classList.toggle('active');
+    }
+
+    function addClass() {
+        this.classList.add('finished');
+    }
+
+    function navigate_to_report(){
+        document.getElementById("detect-phone-mask").style.visibility="hidden";
+        document.getElementById("detect-menu").style.visibility="hidden";
+        document.getElementById("detect-detection").style.visibility="hidden";
+        document.getElementById("detect-res").style.visibility="visible";
+        document.getElementById("detect-upload").style.visibility="hidden";
+    }
+
+
+    upload_btn.addEventListener("click", function() {
+        document.getElementById("detect-phone-mask").style.visibility="visible";
+        document.getElementById("detect-menu").style.visibility="visible";
+    });
+
+    var cancel_menu_btn = document.getElementById(("detect-cancel-menu-btn"))
+    cancel_menu_btn.addEventListener("click", function() {
+        document.getElementById("detect-phone-mask").style.visibility="hidden";
+        document.getElementById("detect-menu").style.visibility="hidden";
+    });
+
+    var detect_img_btn = document.getElementById(("detect-choose-img"))
+     detect_img_btn.addEventListener("click", function() {
+        document.getElementById("detect-menu").style.visibility="hidden";
+        document.getElementById("detect-detection").style.visibility="visible";
+        
+        // Loading
+        button.classList.toggle('active');
+        button.addEventListener('transitionend', toggleClass);
+        button.addEventListener('transitionend', addClass);
+
+        setTimeout(navigate_to_report, loading_time*1000); 
+
+    });
+
+    var cancel_detection_btn = document.getElementById(("detect-cancel"))
+    cancel_detection_btn.addEventListener("click", function() {
+        document.getElementById("detect-phone-mask").style.visibility="hidden";
+        document.getElementById("detect-detection").style.visibility="hidden";
+
+        button.classList.remove("active");
+        button.classList.remove("finished");
+
+
+    });
+
+    var mask_btn = document.getElementById(("detect-phone-mask"))
+    mask_btn.addEventListener("click", function() {
+        document.getElementById("detect-phone-mask").style.visibility="hidden";
+        document.getElementById("detect-menu").style.visibility="hidden";
+        document.getElementById("detect-detection").style.visibility="hidden";
+
+    });
+    
+
+    document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
+        window.location.href = 'map.html';
+    });
+
+    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
+        window.location.href = 'detect.html';
+    });
+
+    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
+        window.location.href = 'home.html';
+    });
+
+
+  
+    var detect_again = document.getElementById(("detect-again-btn"))
+    detect_again.addEventListener("click", function() {
+        document.getElementById("detect-upload").style.visibility="visible";
+        document.getElementById("detect-res").style.visibility="hidden";
+
+        // remove loadding
+        button.classList.remove('active');
+        button.classList.remove('finished');
+
+    });
+
+    $(".progress").each(function() {   
+
+        var value = $(this).attr('data-value');
+        var left = $(this).find('.progress-left .progress-bar');
+        var right = $(this).find('.progress-right .progress-bar');
+        console.log(value)
+
+        if (value > 0) {
+            if (value <= 50) {
+            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+            } else {
+            right.css('transform', 'rotate(180deg)')
+            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+            }
+        }
+
+    })
+
+    function percentageToDegrees(percentage) {
+        return percentage / 100 * 360
+    }
+
+</script>
+</html>
