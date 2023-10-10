@@ -17,8 +17,39 @@
     <title>Mobile & Social</title>
 </head>
 <body class="background">
+    <div id='end-button'><p>End session</p></div>
     <div class="iphone-x">
         <div class="iphone-mask" id="detect-phone-mask"></div>
+
+        <div id="overlay">
+        </div>
+
+        <div class= 'message' id="no-similarity-message">
+            <img class="live-close" src="img/icon/close.png">
+            <p id="error-line1">Please try again!</p>
+            <p id="error-line2">The artwork in your image could not be detected.</p>
+            <img id="error-icon" src="img/live/error.png">
+            <p id="error-back-button">Back</p>
+        </div>
+
+        <div class="message" id="success-message">
+            <img class="live-close" src="img/icon/close.png">
+            <p id="success-line1">Thank you for sharing!</p>
+            <p id="success-line2">Your shared artwork is highlighted in pink.</p>
+            <div></div>
+            <p id="success-view-button">View</p>
+        </div>
+
+        <div class="message" id="end-message">
+            <img class="live-close" src="img/icon/close.png">
+            <p id="end-line1">Session ended</p>
+            <p id="end-line2">Here is a summary of the session you attended.</p>
+            <p id="end-line3">This session's winner:</p>
+            <img id="winning-img">
+            <p id="end-line4">Total attendees: </p>
+            <p id="end-line5">Total photos posted: </p>
+            <p id="end-done-button">Done</p>
+        </div>
 
         <div class="live-container">
             <div class="live-bar">
@@ -26,7 +57,7 @@
                 <div id="user-count">
                     <img id="live-icon" src="img/live/live.png">
                     <div>
-                    <p>9</p>
+                    <p id="user-count-value">9</p>
                     <img id="users-icon" src="img/live/users.png">
                     </div>
                 </div>
@@ -66,94 +97,164 @@
     var galleryImgs = [
         {
             "path": "art1.jpeg",
-            "user-count": 1,
+            "user-count": 0,
             "id": "art1-live",
             "width": 5
         },
         {
             "path": "art2.jpeg",
-            "user-count": 1,
+            "user-count": 0,
             "id": "art2-live",
             "width": 5
         },
         {
             "path": "art3.jpeg",
-            "user-count": 1,
+            "user-count": 0,
             "id": "art3-live",
             "width": 5
         },
         {
             "path": "art4.jpeg",
-            "user-count": 1,
+            "user-count": 0,
             "id": "art4-live",
             "width": 5
         },
         {
             "path": "art5.jpeg",
-            "user-count": 1,
+            "user-count": 0,
             "id": "art5-live",
             "width": 5
         }
     ]
 
-    function getRandomIndex() {
-        min = 0;
-        max = 5;
+    function getRandomIndex(min, max) {
         return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
     }
     
     const imgInput = document.getElementById("upload-img");
+    var interactionInterval;
+    var viewers;
 
     imgInput.addEventListener('change', () => {
-        console.log("changed");
         var parts = imgInput.value.split("\\");
         var result = parts[parts.length - 1];
-        console.log(result);
         let reader = new FileReader();
         reader.readAsDataURL(imgInput.files[0]);
         reader.addEventListener("load", () => {
             var detectedArtwork = galleryImgs.filter(image => image["path"] == result)[0];
             if (detectedArtwork === undefined){
                 // Display pop-up to show no similarity
-                console.log('no similarity');
+                document.getElementById('overlay').style.display = "block";
+                document.getElementById("no-similarity-message").style.display = "block"
             }
             else{
+                //Diplay pop-up to communicate success
+                document.getElementById('overlay').style.display = "block";
+                document.getElementById("success-message").style.display = "block";
+
                 document.getElementById("upload-button").style.display = "none"; // Remove upload button if the image is received successfully
                 console.log("image detected");
                 detectedArtwork["user-count"]+=1;
                 if (document.getElementById(detectedArtwork["id"])){
                     // Increase width of the user uploaded photo
                     if (detectedArtwork["width"]<10){
-                        detectedArtwork["width"]+=1;
+                        detectedArtwork["width"]+=0.5;
                     }
                     document.getElementById(detectedArtwork['id']).style.width=`${detectedArtwork["width"]}vw`;
                     // Set class name to change stlying of the image border
                     document.getElementById(detectedArtwork["id"]).classList.add("current-user");
+                    // Update the user counter
+                    document.getElementById(`${detectedArtwork["id"]}-count`).innerHTML = detectedArtwork["user-count"];
                     // Show pop-up
                 }
                 else{
-                    document.getElementsByClassName("live-img-container")[0].innerHTML+=`<img id=${detectedArtwork["id"]} class="live-img current-user" src=img/live/gallery/${detectedArtwork["path"]}>`;
+                    document.getElementsByClassName("live-img-container")[0].innerHTML+=`<div class="user-count-container"><img id=${detectedArtwork["id"]} class="live-img current-user" src=img/live/gallery/${detectedArtwork["path"]}><div class="img-user-count"><p id=${detectedArtwork['id']}-count>${detectedArtwork['user-count']}</p><img src="img/live/users.png"></div></div>`;
                     // Show pop-up
                 };
-                var interactionInterval = setInterval(function(){
-                var artwork = galleryImgs[getRandomIndex()];
+
+                interactionInterval = setInterval(function(){
+                var artwork = galleryImgs[getRandomIndex(0,5)];
                 artwork["user-count"]+=1;
                 if (document.getElementById(artwork["id"])){
                     // Increase width of the user uploaded photo
                     if (artwork["width"]<10){
-                        artwork["width"]+=1;
+                        artwork["width"]+=0.25;
                     }
                     document.getElementById(artwork['id']).style.width=`${artwork["width"]}vw`;
+                    // Update the user counter
+                    document.getElementById(`${artwork["id"]}-count`).innerHTML = artwork["user-count"];
                     // Show pop-up
                 }
                 else{
-                    document.getElementsByClassName("live-img-container")[0].innerHTML+=`<img id=${artwork["id"]} class="live-img" src=img/live/gallery/${artwork["path"]}>`;
+                    document.getElementsByClassName("live-img-container")[0].innerHTML+=`<div class="user-count-container"><img id=${artwork["id"]} class="live-img" src=img/live/gallery/${artwork["path"]}><div class="img-user-count"><p id=${artwork['id']}-count>${artwork['user-count']}</p><img src="img/live/users.png"></div></div>`;
                     // Show pop-up
                 };
-                }, 1000);
+                }, 3000);
             }
         });
     })
 
+    var countChange = setInterval(function(){
+        var randomChange = getRandomIndex(0,10);
+        viewers =parseInt(document.getElementById("user-count-value").innerHTML) + randomChange;
+        document.getElementById("user-count-value").innerHTML = viewers;
+    }, 5000);
+
+    document.getElementById('overlay').addEventListener('click', function(){
+        document.getElementById('overlay').style.display = "none";
+        Array.from(document.getElementsByClassName('message')).forEach(div => {
+            div.style.display = 'none';
+        });
+    })
+
+    document.getElementById('success-view-button').addEventListener('click', function(){
+        document.getElementById('overlay').style.display = "none";
+        document.getElementById('success-message').style.display = "none";
+    })
+
+    document.getElementById('error-back-button').addEventListener('click', function(){
+        document.getElementById('overlay').style.display = "none";
+        document.getElementById('no-similarity-message').style.display = "none";
+    })
+
+    document.getElementById('end-button').addEventListener('click', function(){
+        clearInterval(interactionInterval);
+        clearInterval(countChange);
+
+        // Map the user counts of each artwork
+        var countArray = galleryImgs.map((artwork)=> artwork['user-count']);
+        var winningCount = Math.max(...countArray);
+        var winningArtwork = galleryImgs.filter(artwork => artwork["user-count"] === winningCount)[0];
+        
+        document.getElementById("winning-img").src = `img/live/gallery/${winningArtwork["path"]}`;
+        document.getElementById("end-line4").innerHTML += viewers;
+        document.getElementById("end-line5").innerHTML += countArray.reduce((num1, num2) => num1 + num2, 0)
+
+        //Diplay pop-up to signal end of session
+
+        document.getElementById('overlay').style.display = "block";
+        document.getElementById("end-message").style.display = "block";
+    })
+
+    document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
+        window.location.href = 'map.html';
+    });
+
+    Array.from(document.getElementsByClassName('live-close')).forEach(closeButton => {
+            closeButton.addEventListener('click', function(){
+                document.getElementById('overlay').style.display = "none";
+                Array.from(document.getElementsByClassName('message')).forEach(div => {
+                    div.style.display = 'none';
+                });
+            })
+        });
+
+    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
+        window.location.href = 'detect.html';
+    });
+
+    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
+        window.location.href = 'home.html';
+    });
 </script>
 </html>
