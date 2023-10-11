@@ -6,10 +6,10 @@
  --icon-offset: 7vh;
 }
 
-
+/* 
 body {
   background: #3f436b;
-}
+} */
 
 body:after {
   position: absolute;
