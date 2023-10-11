@@ -66,7 +66,7 @@
 .map-popup-card{
     flex-direction: row;
     width: calc(var(--iphone-width)/4);
-    height: calc(var(--iphone-height)/4);
+    height: calc(var(--iphone-height)/6);
 }
 
 .map-popup-card img{
@@ -103,7 +103,6 @@
 
 .map-art-info{
     position: absolute;
-    top: calc(var(--iphone-height)/8);
     width: calc(var(--iphone-width)/1.1);
     height: calc(var(--iphone-height)/2.3);
     z-index: 4;
@@ -112,7 +111,7 @@
 
 .map-art-info .card-body{
     width: calc(var(--iphone-width)/1.1);
-    height: calc(var(--iphone-height)/2.2);
+    /* height: calc(var(--iphone-height)/2.2); */
 }
 
 .map-art-info h5{
@@ -134,16 +133,17 @@
 }
 
 .map-detailed-info{
-    top: calc(var(--iphone-height)/5);
+    position: absolute;
+    /* top: calc(var(--iphone-height)/5); */
     width: calc(var(--iphone-width)/1.5);
-    height: calc(var(--iphone-height)/1.7);
+    /* height: calc(var(--iphone-height)/1.7); */
     z-index: 4;
     visibility: hidden;
 }
 
 .map-detailed-info .card-body{
     width: calc(var(--iphone-width)/1.5);
-    height: calc(var(--iphone-height)/1.7);
+    /* height: calc(var(--iphone-height)/1.7); */
 }
 .map-detailed-info .btn{
     width: calc(var(--iphone-width)/1.9);
