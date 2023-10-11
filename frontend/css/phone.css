@@ -108,7 +108,7 @@ body:after {
   justify-content: space-around;
   align-items: center;
   background: #F5F5F5;
-  border-radius: 0px 0px 40px 40px;
+  /* border-radius: 0px 0px 40px 40px; */
   z-index: 3;
 
 }
@@ -137,19 +137,19 @@ body:after {
   width: 5px;
   top: 20px;
   height: 5px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   position: relative;
   display: inline-block;
   opacity: 0;
 }
 
-.icons .icon-l{
+/* .icons .icon-l{
   border-radius: 0px 0px 0px 40px;
 }
 
 .icons .icon-r{
   border-radius: 0px 0px 40px 0px;
-}
+} */
 
 /* .icons .icon:hover{
   background: #3f436b;

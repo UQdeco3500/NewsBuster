@@ -306,9 +306,9 @@
     flex-direction: column;
 }
 
-.detect-menu-input-container .btn{
+/* .detect-menu-input-container .btn{
     font-size: 0.6rem;
-}
+} */
 
 .custom-file-input{
     height: 0px;
@@ -751,3 +751,9 @@
 } */
 
 
+.mobile-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
