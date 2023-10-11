@@ -1,6 +1,6 @@
 :root {
-    --iphone-width: 18vw;
-    --iphone-height: 65vh;
+    --iphone-width: 100vw;
+    --iphone-height: 100vh;
     --icon-offset: 7vh;
     --theme-color: #2E5A88;
     --transition-color: #4380bf;
