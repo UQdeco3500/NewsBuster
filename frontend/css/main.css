@@ -758,3 +758,22 @@
     top: calc(100vh - var(--icon-offset));
 }
 
+/* #search-bar{
+    margin: 0 5vh;
+} */
+
+#search-contain{
+    display: flex;
+    justify-content: center;
+}
+
+.detect-search{
+    margin: 1vh auto;
+}
+
+
+#body-div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
