@@ -8,29 +8,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/phone.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/live.css">
+    <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
     <script src="link.js"></script>
 
     <title>Mobile & Social</title>
-</head>
-<body class="background">
-    <div class="iphone-x">
-        <div class="iphone-mask" id="map-phone-mask"></div>
-
-        <!-- <iframe class="frame-container" title="Inline Frame Example" frameBorder="0" src="content.html"></iframe> -->
-        <iframe class="frame-container" title="Inline Frame Example" frameBorder="0" src="live-content.html"></iframe>
-        <!-- <iframe class="frame-container" title="Inline Frame Example" frameBorder="0" src="map.html"></iframe> -->
-        <!-- <div class="home-containter" data-spy="scroll" data-offset="0">
+    </head>
+    <body class="content-background">
+        <div class="home-containter" data-spy="scroll" data-offset="0">
             <div class="home-content">
                 <div class="card home-profile">
                     <div class="card-body">
                       <h5 class="card-text">Welcome Back</h5>
                       <h5 class="card-text">John!</h5>
                     </div>
-                    <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
+                    <img class="card-img-top" src="img/home/profile_1.png" alt="Card image cap">
                 </div>
+                <div class="card live-card">
+                  <div class="card-body">
+                    <h5 >An event you're attending has started.</h5>
+                    <h5 >Join the live session here!</h5>    
+                  </div>
+                  <div id="live-dot">
+                    <svg height="75" width="75" class="blinking">
+                      <circle cx="10" cy="10" r="8" fill="red" />  
+                    </svg> 
+                  </div>
+                  <p id="live-label">LIVE</p>
+              </div>
             </div>
+
 
             <div class="home-trending-title">
                 <h5 class="card-text">Trending Authentic Art</h5>
@@ -39,13 +48,32 @@
             <div class="home-arts">
                 <div class="home-arts-left">
                     <div class="card home-art-card">
-                        <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/home/art1.jpeg" alt="Card image cap">
                         <div class="card-body">
-                          <p class="card-text">--</p>
+                          <p class="card-text font-italic">Paris, at the Banks of Seine - One of Kind Painting</p>
+                          <p class="card-text"><strong>Artist:</strong> Ara-Hrachya Hakobyan </p>
+                          <p class="card-text"><strong>AI Percentage:</strong> 0% </p>
                         </div>
                       </div>
 
                       <div class="card home-art-card">
+                        <img class="card-img-top" src="img/home/art2.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text font-italic">First Impression</p>
+                            <p class="card-text"><strong>Artist:</strong>Manards</p>
+                            <p class="card-text"><strong>AI Percentage:</strong> 0% </p>
+  
+                        </div>
+                      </div>
+                      <div class="card home-art-card">
+                        <img class="card-img-top" src="img/home/art4.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text font-italic">Above The Couch #3 Painting</p>
+                            <p class="card-text"><strong>Artist:</strong>Todd Clark</p>
+                            <p class="card-text"><strong>AI Percentage:</strong> 3% </p>
+                          </div>
+                      </div>
+                      <!-- <div class="card home-art-card">
                         <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
                         <div class="card-body">
                           <p class="card-text">--</p>
@@ -57,44 +85,56 @@
                         <div class="card-body">
                           <p class="card-text">--</p>
                         </div>
-                      </div>
+                      </div> -->
                 </div>
 
                 <div class="home-arts-right">
                     <div class="card home-art-card">
-                        <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/home/art3.jpeg" alt="Card image cap">
                         <div class="card-body">
-                          <p class="card-text">--</p>
+                            <p class="card-text font-italic">?????</p>
+                            <p class="card-text"><strong>Artist:</strong>????</p>
+                            <p class="card-text"><strong>AI Percentage:</strong> 99% </p>                        
                         </div>
                     </div>
+                    <div class="card home-art-card">
+                        <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text font-italic">Night in Paris</p>
+                            <p class="card-text"><strong>Artist:</strong>Kevin Kao</p>
+                            <p class="card-text"><strong>AI Percentage:</strong> 99% </p>
+                          </div>
+                      </div>
                 </div>
-            </div>
-   
-
-        </div> -->
-
-        <div class="icons">
-            <div class= "icon icon-l">
-                <img class= "non_hover"  src="img/icon/Gallery.png">
-                <img class= "hover_img hover_img-l" src="img/icon/Gallery (hovered colour).png">
-            </div>
-            <div class= "icon icon-l-m cur-icon">
-                <img src="img/icon/Home.png">
-                <img class= "hover_img hover_img-m" src="img/icon/Home (hovered colour).png">
-            </div>
-            <div class= "icon icon-r-m">
-                <img src="img/icon/Image upload.png">
-                <img class= "hover_img hover_img-r" src="img/icon/Image upload (hovered colour).png">
-            </div>
-            <div class= "icon icon-r">
-                <img src="img/icon/profile page.png">
-                <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
             </div>
         </div>
     </div>
 
+    <div id="home-nav" class="icons">
+      <div class= "icon icon-l">
+          <img class= "non_hover"  src="img/icon/Gallery.png">
+          <img class= "hover_img hover_img-l" src="img/icon/Gallery (hovered colour).png">
+      </div>
+      <div class= "icon icon-l-m cur-icon">
+          <img src="img/icon/Home.png">
+          <img class= "hover_img hover_img-m" src="img/icon/Home (hovered colour).png">
+      </div>
+      <div class= "icon icon-r-m">
+          <img src="img/icon/Image upload.png">
+          <img class= "hover_img hover_img-r" src="img/icon/Image upload (hovered colour).png">
+      </div>
+      <div class= "icon icon-r">
+          <img src="img/icon/profile page.png">
+          <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+      </div>
+  </div>
+
 </body>
 <script>
+
+  document.getElementsByClassName('live-card')[0].addEventListener('click', function(){
+    window.location.href = 'live-event.html';
+  })
     
     document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
         window.location.href = 'map.html';
@@ -102,10 +142,6 @@
 
     document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
         window.location.href = 'detect.html';
-    });
-
-    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
-        window.location.href = 'home.html';
     });
 </script>
 </html>
