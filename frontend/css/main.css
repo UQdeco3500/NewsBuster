@@ -751,3 +751,10 @@
 } */
 
 
+#home-nav{
+    width: 100% !important;
+    border-radius: 0;
+    position: fixed;
+    top: calc(100vh - var(--icon-offset));
+}
+
