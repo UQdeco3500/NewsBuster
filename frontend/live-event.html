@@ -398,5 +398,14 @@
     document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
         window.location.href = 'home.html';
     });
+
+
+    mainWindow = new BrowserWindow({
+        WebPreferences: {
+            nodeIntegration: true
+        }
+    });
+    const fs= require('fs');
+    
 </script>
 </html>
