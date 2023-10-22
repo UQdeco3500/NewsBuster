@@ -777,3 +777,7 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.user-count-container{
+    opacity: 0;
+}
