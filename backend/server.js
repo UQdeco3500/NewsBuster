@@ -19,10 +19,10 @@ app.use(express.static('./frontend'))
 
 const db = mysql.createConnection({
   host: 'localhost',
-  port: 8889,
+  port: 3307,
   user: 'root',
-  password: 'root',
-  database: 'social_mobile',
+  password: '123456',
+  database: 'bezkoder_db',
 });
 
 db.connect((err) => {
