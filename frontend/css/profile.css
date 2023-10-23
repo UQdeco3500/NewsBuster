@@ -1,0 +1,86 @@
+:root {
+    /* --iphone-width: 18vw;
+    --iphone-height: 65vh; */
+    --icon-offset: 7vh;
+    --theme-color: rgba(46, 90, 136, 0);
+    --transition-color: #4380bf;
+    --mask-color: #f6f6f6;
+    --loading-time: 3s;
+    --button-border-radius: 0.3125rem;
+   }
+
+#profile-body{
+  text-align: center;
+}
+
+#profile-banner{
+  height:33vh;
+  width:100vw;
+  background-color: rgba(46, 90, 136, 0.6);
+  border-radius: 0 0 2vh 2vh;
+  text-align: center
+}
+
+#profile-banner div{
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  position:relative;
+}
+
+#profile-title{
+  padding-top: 4vh;
+  color: #fff;
+  font-size: 2.3vh;
+  font-weight: 600;
+}
+
+#profile-pic{
+  width:15vh;
+  border: dashed 2px #fff;
+  border-radius: 7.5vh;
+}
+
+#profile-pic-edit{
+  width: 4vh;
+  position:absolute;
+  bottom: -2vh;
+}
+
+.profile-field{
+  width:100vw;
+  margin: 0 auto;
+  margin-top: 4vh;
+}
+
+.profile-field div{
+  position: relative;
+}
+
+.profile-field p{
+  width: 85vw;
+  text-align: left;
+  margin: 0 auto;
+  color: var(--theme-color);
+  margin-bottom: 0.25vh;
+}
+
+.profile-field-edit-icon{
+  width:3vh;
+  position: absolute;
+  right: 4.5vh;
+  top: 0.8vh;
+}
+
+.profile-field-text-input{
+  width: 85vw;
+    --theme-color: rgba(46, 90, 136, 0.8);
+  border: none;
+  padding: 1vh;
+  padding-left: 1.5vh;
+  border-radius: 1vh;
+  color: var(--theme-color);
+  font-weight: 400;
+}
+
+

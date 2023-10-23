@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
-    <script src="link.js"></script>
 
     <title>Mobile & Social</title>
     </head>
@@ -49,61 +48,46 @@
                 <div class="home-arts-left">
                     <div class="card home-art-card">
                         <img class="card-img-top" src="img/home/art1.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text font-italic">Paris, at the Banks of Seine - One of Kind Painting</p>
-                          <p class="card-text"><strong>Artist:</strong> Ara-Hrachya Hakobyan </p>
-                          <p class="card-text"><strong>AI Percentage:</strong> 0% </p>
+                        <div class="card-body home-details-con">
+                          <div  class="btn btn-primary home-details-btn">Details</div>
                         </div>
                       </div>
 
                       <div class="card home-art-card">
                         <img class="card-img-top" src="img/home/art2.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text font-italic">First Impression</p>
-                            <p class="card-text"><strong>Artist:</strong>Manards</p>
-                            <p class="card-text"><strong>AI Percentage:</strong> 0% </p>
-  
-                        </div>
-                      </div>
-                      <div class="card home-art-card">
-                        <img class="card-img-top" src="img/home/art4.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text font-italic">Above The Couch #3 Painting</p>
-                            <p class="card-text"><strong>Artist:</strong>Todd Clark</p>
-                            <p class="card-text"><strong>AI Percentage:</strong> 3% </p>
-                          </div>
-                      </div>
-                      <!-- <div class="card home-art-card">
-                        <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">--</p>
+                        <div class="card-body home-details-con">
+                          <div  class="btn btn-primary home-details-btn">Details</div>
                         </div>
                       </div>
 
-                                          <div class="card home-art-card">
-                        <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">--</p>
-                        </div>
-                      </div> -->
                 </div>
 
                 <div class="home-arts-right">
+
+                    <div class="card home-art-card" id="home-pose-locations">
+                      <div class="card-body home-details-con" id="home-pose-locations-content">
+                        <h5>23 Posts</h5>
+                        <h4>Brisbane, Australia</h4>
+                      </div>
+                  </div>
+
                     <div class="card home-art-card">
                         <img class="card-img-top" src="img/home/art3.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text font-italic">?????</p>
-                            <p class="card-text"><strong>Artist:</strong>????</p>
-                            <p class="card-text"><strong>AI Percentage:</strong> 99% </p>                        
+                        <div class="card-body home-details-con">
+                          <div  class="btn btn-primary home-details-btn">Details</div>
                         </div>
                     </div>
                     <div class="card home-art-card">
                         <img class="card-img-top" src="img/home/Paris.png" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text font-italic">Night in Paris</p>
-                            <p class="card-text"><strong>Artist:</strong>Kevin Kao</p>
-                            <p class="card-text"><strong>AI Percentage:</strong> 99% </p>
-                          </div>
+                        <div class="card-body home-details-con">
+                          <div  class="btn btn-primary home-details-btn">Details</div>
+                        </div>
+                      </div>
+                      <div class="card home-art-card">
+                        <img class="card-img-top" src="img/home/art4.jpeg" alt="Card image cap">
+                        <div class="card-body home-details-con">
+                          <div  class="btn btn-primary home-details-btn">Details</div>
+                        </div>
                       </div>
                 </div>
             </div>
@@ -125,7 +109,7 @@
       </div>
       <div class= "icon icon-r">
           <img src="img/icon/profile page.png">
-          <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+          <img class= "hover_img hover_img-rr" src="img/icon/profile page (hovered colour).png">
       </div>
   </div>
 
@@ -136,12 +120,7 @@
     window.location.href = 'live-event.html';
   })
     
-    document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
-        window.location.href = 'map.html';
-    });
-
-    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
-        window.location.href = 'detect.html';
-    });
 </script>
+<script src="link.js"></script>
+
 </html>

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <link rel="stylesheet" href="css/live.css"/>
     <script src="leaflet/leaflet.js"></script>
-    <script src="link.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <title>Mobile & Social</title>
@@ -307,21 +306,9 @@
             })
         });
 
-    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
-        window.location.href = 'detect.html';
-    });
 
-    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
-        window.location.href = 'home.html';
-    });
-
-
-    mainWindow = new BrowserWindow({
-        WebPreferences: {
-            nodeIntegration: true
-        }
-    });
-    const fs= require('fs');
     
 </script>
+<script src="link.js"></script>
+
 </html>

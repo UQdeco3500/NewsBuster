@@ -2,7 +2,7 @@
     --iphone-width: 100vw;
     --iphone-height: 100vh;
     --icon-offset: 7vh;
-    --theme-color: #2E5A88;
+    --theme-color: rgba(46, 90, 136, 0.8);
     --transition-color: #4380bf;
     --mask-color: #f6f6f6;
     --loading-time: 3s;
@@ -66,7 +66,7 @@
 .map-popup-card{
     flex-direction: row;
     width: calc(var(--iphone-width)/4);
-    height: calc(var(--iphone-height)/4);
+    height: calc(var(--iphone-height)/5);
 }
 
 .map-popup-card img{
@@ -103,7 +103,8 @@
 
 .map-art-info{
     position: absolute;
-    top: calc(var(--iphone-height)/8);
+    top: calc(var(--iphone-height)/4.5);
+    left: calc(var(--iphone-width)/20);
     width: calc(var(--iphone-width)/1.1);
     height: calc(var(--iphone-height)/2.3);
     z-index: 4;
@@ -112,7 +113,7 @@
 
 .map-art-info .card-body{
     width: calc(var(--iphone-width)/1.1);
-    height: calc(var(--iphone-height)/2.2);
+    /* height: calc(var(--iphone-height)/2.2); */
 }
 
 .map-art-info h5{
@@ -134,7 +135,8 @@
 }
 
 .map-detailed-info{
-    top: calc(var(--iphone-height)/5);
+    top: calc(var(--iphone-height)/3.5);
+    left: calc(var(--iphone-width)/6);
     width: calc(var(--iphone-width)/1.5);
     height: calc(var(--iphone-height)/1.7);
     z-index: 4;
@@ -143,7 +145,8 @@
 
 .map-detailed-info .card-body{
     width: calc(var(--iphone-width)/1.5);
-    height: calc(var(--iphone-height)/1.7);
+    /* height: calc(var(--iphone-height)/1.7); */
+    
 }
 .map-detailed-info .btn{
     width: calc(var(--iphone-width)/1.9);
@@ -384,6 +387,13 @@
     z-index: 10;
 }
 
+.detect-art #publish-result-cancel{
+    left: -50px;
+    top: 0px;
+    position: absolute;
+    z-index: 10;
+}
+
 .detect-blank{
     height: 10vh;
 }
@@ -506,7 +516,6 @@
 
 #detect-res{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     visibility: hidden;
@@ -529,12 +538,15 @@
 
 .detect-report-container{
     width: calc(var(--iphone-width)/1.1);
-    height: calc(var(--iphone-height)/8);
+    height: calc(var(--iphone-height)/9);
     border-radius: var(--button-border-radius);
-    margin-bottom: 4px;
+    /* margin-bottom: 4px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
+
+
 
 .detect-prec{
     height: calc(var(--iphone-height)/7);
@@ -614,11 +626,11 @@
 
 .detect-art-profile{
     flex-direction: row;
-    height: calc(var(--iphone-height)/8);
-    width: calc(var(--iphone-width)/2);
+    /* height: calc(var(--iphone-height)/8); */
+    /* width: calc(var(--iphone-width)/2); */
     background-color: var(--theme-color);
     margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border-radius: var(--button-border-radius);
     align-items: center;
     justify-content: center;
@@ -627,7 +639,7 @@
 
 .detect-art-profile p{
     font-size: 0.7rem;
-    color: #fff;
+    color: #2E5A88;
     margin-bottom: 0;
 }
 .detect-art-profile img{
@@ -637,18 +649,19 @@
 }
 
 .detect-art-title{
-    width: calc(var(--iphone-width)/2.5);
+    width: calc(var(--iphone-width)/3);
 
 }
 
 .detect-report-share{
-    justify-content: flex-start;
+    height: calc(var(--iphone-width)/6);
+
 }
 
 .detect-report-share .detect-art-profile{
     justify-content: center;
     align-items: center;
-    height: calc(var(--iphone-height)/10);
+    /* height: calc(var(--iphone-height)/10); */
     margin-right: 2px;
 }
 
@@ -780,4 +793,50 @@
 
 .user-count-container{
     opacity: 0;
+}
+
+#detect-again-btn:hover{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#detect-publish:hover{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+#publish-result{
+    visibility: hidden;
+}
+
+#publish-result .card{
+    padding-top: 0px;
+}
+
+.home-details-btn{
+    background-color: var(--theme-color);
+    font-size: 0.35rem;
+}
+
+.home-details-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-pose-locations{
+    border-radius: 8px;
+    border: 1px dashed var(--theme-color);
+
+    background: #FBFBFB;
+    }
+
+#home-pose-locations-content{
+    flex-direction: column;
+}
+
+#home-pose-locations-content h4{
+    font-size: 0.6rem;
+    color: rgba(0, 0, 0, 0.50);
+
+
 }
