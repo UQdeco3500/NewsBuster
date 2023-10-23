@@ -361,6 +361,10 @@
 
 }
 
+#detect-detection{
+    left: calc(var(--iphone-width)/8);
+}
+
 .detect-art #detect-detection-img{
     height: calc(var(--iphone-height)/3);
     border-radius: var(--button-border-radius);
@@ -806,6 +810,7 @@
 
 #publish-result{
     visibility: hidden;
+    left: calc(var(--iphone-width)/8);
 }
 
 #publish-result .card{
