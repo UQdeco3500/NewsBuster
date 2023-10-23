@@ -1,0 +1,93 @@
+:root {
+  --iphone-width: 100vw;
+  --iphone-height: 100vh;
+  --icon-offset: 7vh;
+  --theme-color: rgba(46, 90, 136, 0.8);
+  --transition-color: #4380bf;
+  --mask-color: #f6f6f6;
+  --loading-time: 3s;
+  --button-border-radius: 0.3125rem;
+
+ }
+
+
+#art-banner{
+  width: 100vw;
+  height: 45vh;
+  position: absolute;
+}
+
+
+#art-content{
+  width: 100vw;
+  height: 60vh;
+  background-color: #f6f6f6;
+  border-radius: 30px;
+  position: absolute;
+  top: 38vh;
+  padding: 30px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+#art-content h1{
+  color: #2E5A88;
+
+  /* text-align: center; */
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+}
+
+/* .art-detail-info-container{
+  height: ;
+} */
+.art-title-artist{
+  justify-content: space-around;
+}
+
+.art-detail-artist{
+  width: calc(var(--iphone-width)/3);
+
+}
+
+.art-detail-title{
+  width: calc(var(--iphone-width)/2.2);
+}
+
+.art-details .card-body{
+  width: calc(var(--iphone-width)/5);
+  padding: 10px;
+}
+
+.art-details .card-body p{
+  font-size: 0.5rem;
+}
+
+
+.detect-report-container{
+  height: auto;
+}
+
+
+.art-details .card-body h3{
+  font-size: 0.7rem;
+  color: #2E5A88;
+  margin-top: 4px;
+}
+
+.art-detail-artist h3{
+  font-size: 1rem;
+  color: #2E5A88;
+  margin-top: 4px;
+}
+
+.art-detail-title h3{
+  font-size: 1rem;
+  color: #2E5A88;
+  margin-top: 4px;
+}

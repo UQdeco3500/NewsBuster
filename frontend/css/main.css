@@ -129,7 +129,7 @@
 }
 
 .map-art-info .btn{
-    width: calc(var(--iphone-width)/3.2);
+    /* width: calc(var(--iphone-width)/3.2); */
     height: calc(var(--iphone-width)/12);
     font-size: 0.5em;
 }
@@ -844,4 +844,48 @@
     color: rgba(0, 0, 0, 0.50);
 
 
+}
+
+
+
+
+#home-locations-info{
+    position: fixed;
+    visibility: hidden;
+    width: calc(var(--iphone-width)/0.2);
+    height: calc(var(--iphone-height)/2.3);
+    top: calc(var(--iphone-height)/2.3);
+    z-index: 4;
+}
+
+#home-locations-info .card{
+
+    width: calc(var(--iphone-width)/0.2);
+
+}
+
+#home-locations-info .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--iphone-width)/0.2);
+
+}
+
+
+#home-locations-info .btn{
+    width: auto;
+    margin-right: 0px;
+}
+
+
+#home-locations-info-btn{
+    position: absolute;
+    z-index: 4;
+    /* font-size: 3rem; */
+}
+
+#home-locations-info-btn i{
+    font-size: 2rem;
 }

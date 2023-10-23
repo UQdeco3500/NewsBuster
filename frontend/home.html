@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/live.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/art_details.css">
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
 
@@ -49,7 +50,7 @@
                     <div class="card home-art-card">
                         <img class="card-img-top" src="img/home/art1.jpeg" alt="Card image cap">
                         <div class="card-body home-details-con">
-                          <div  class="btn btn-primary home-details-btn">Details</div>
+                          <div  class="btn btn-primary home-details-btn" id="home-details-art-1">Details</div>
                         </div>
                       </div>
 
@@ -94,6 +95,34 @@
         </div>
     </div>
 
+
+  <div class="map-detailed-info" id="home-locations-info">
+    <a href="#" class="btn btn-link text-primary" id="home-locations-info-btn"><i class="fa fa-times-circle-o"></i></a>
+
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" id="home-location-title">Change your location</h4>
+          <!-- <h4 class="card-text">Lighting in Paris</h4> -->
+          <div class="form-group" style="margin-bottom: 0.1rem;">
+            <label>Current Location address</label>
+            <p id="home-cur-location">Brisbane City, Australia</p>
+            <input style="visibility: hidden; height: 0px;" type="password" class="form-control" placeholder="newLocation">
+
+
+          </div>
+          <div class="form-group">
+            <label >New Location</label>
+            <!-- <input type="password" class="form-control" id="newLocation" placeholder="New Location"> -->
+            <input  class="form-control" id="newLocation"  placeholder="Enter New Location">
+
+          </div>
+
+          <div class="btn btn-link btn-primary" id="home-change-location-btn">Confirm</div>
+
+        </div>
+      </div>
+</div>
+
     <div id="home-nav" class="icons">
       <div class= "icon icon-l">
           <img class= "non_hover"  src="img/icon/Gallery.png">
@@ -115,10 +144,36 @@
 
 </body>
 <script>
+  location_btn = document.getElementById("home-change-location-btn")
+  location_btn.addEventListener('click', function(){
+    var new_location = document.getElementById("newLocation").value
+      document.getElementById("home-cur-location").innerHTML = new_location
+      document.getElementById("home-location-title").innerHTML = 'Success !'
+    }
+  )
+
+  document.getElementById("home-locations-info-btn").addEventListener('click', function(){
+    document.getElementById("home-locations-info").style.visibility = 'hidden'
+    
+  })
 
   document.getElementsByClassName('live-card')[0].addEventListener('click', function(){
     window.location.href = 'live-event.html';
   })
+
+  document.getElementById("home-pose-locations-content").addEventListener('click', function(){
+    document.getElementById("home-locations-info").style.visibility = 'visible'
+    document.getElementById("home-location-title").innerHTML = 'Change your location'
+
+  })
+
+  document.getElementById("home-details-art-1").addEventListener('click', function(){
+    window.location.href = 'home-art-details.html';
+
+  })
+
+  
+  
     
 </script>
 <script src="link.js"></script>
