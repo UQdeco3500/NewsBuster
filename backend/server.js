@@ -75,6 +75,7 @@ app.get('/map', (req, res) => {
   res.render('map.html');
 })
 
+
 // Handle file upload
 // app.post('/upload', upload.single('image'), (req, res) => {
 //   console.log('Image uploaded successfully');

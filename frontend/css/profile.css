@@ -84,3 +84,7 @@
 }
 
 
+
+.profile-content{
+  height: calc(100vh - 33vh);
+}

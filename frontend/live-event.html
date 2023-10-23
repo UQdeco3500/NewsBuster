@@ -98,7 +98,7 @@
                 <img class= "non_hover"  src="img/icon/Gallery.png">                
                 <img href="map.html" class= "hover_img hover_img-l" src="img/icon/Gallery (hovered colour).png">
             </div>
-            <div class= "icon icon-l-m">
+            <div class= "icon icon-l-m cur-icon">
                 <img src="img/icon/Home.png">
                 <img class= "hover_img hover_img-m" src="img/icon/Home (hovered colour).png">
             </div>
@@ -305,7 +305,11 @@
                 });
             })
         });
+    
+    document.getElementById("go-back-icon").addEventListener('click', function(){
+        window.location.href = 'home.html';
 
+    })
 
     
 </script>
