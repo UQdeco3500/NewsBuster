@@ -11,21 +11,26 @@
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
     <script src="link.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
 
     <title>Mobile & Social</title>
 </head>
-<body class="background">
-    <div class="iphone-x">
-        <div class="iphone-mask" id="map-phone-mask"></div>
-        <div class="iphone-mask" id="map-detailed-mask"></div>
+<body>
+    <!-- <div class="iphone-x"> -->
+        <!-- <div class="iphone-mask" id="map-phone-mask"></div>
+        <div class="iphone-mask" id="map-detailed-mask"></div> -->
 
+        <div id="search-contain">
         <div class="bg-light rounded rounded-pill shadow-sm map-search">
-            <div class="input-group">
+            <div id="search-bar" class="input-group">
                 <input type="search" placeholder="Searching..." aria-describedby="button-addon1" class="form-control border-0 font-italic text-white">
                 <div class="input-group-append">
                 <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
                 </div>
             </div>
+        </div>
         </div>
 
         <section id="openMap" class="map-container">
@@ -40,7 +45,7 @@
                   <h5 class="card-title">Lighting in Paris</h5>
                   <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                   <p class="card-text">Location: Lorem Ipsum has been the industry's standard dummy text (8.2km)</p>
-                 <a href="#" class="btn btn-primary" id="map-contact-btn-Paris">Contact the artist</a>
+                 <a href="#" class="btn btn-primary" id="map-contact-btn-Paris">Click here to view gallery contacts</a>
                  <a href="#" class="btn btn-primary" id="map-check-out-btn-Paris">Check out</a>
 
                 </div>
@@ -67,7 +72,9 @@
 
                   <p class="card-text font-italic">149 Merivale St, South Brisbane QLD 4101</p>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                  <a href="#" class="btn btn-link text-primary" id="map-detailed-Paris-close-btn"><i class="fa fa-times-circle-o"></i></a>
+                  <!-- <a href="#" class="btn btn-link text-primary" id="map-detailed-Paris-close-btn"><i class="fa fa-times-circle-o"></i></a> -->
+                  <a href="#" class="btn btn-link btn-primary" id="map-detailed-Paris-close-btn">Going</a>
+
                 </div>
               </div>
         </div>
@@ -88,7 +95,7 @@
             </div>
             <div class= "icon icon-r">
                 <img src="img/icon/profile page.png">
-                <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+                <img class= "hover_img hover_img-rr" src="img/icon/profile page (hovered colour).png">
             </div>
         </div>
     </div>
@@ -116,9 +123,7 @@
     });
 
     L.marker([-27.4698, 153.0251], {icon: customIcon}).addTo(map)
-            .bindPopup(Paris)
-            .openPopup();
-
+            .bindPopup(Paris);
 
     // Listening Button
     map.on('popupopen', function(e) {
@@ -137,30 +142,22 @@
     var open_detailed_Paris_btn = document.getElementById(("map-contact-btn-Paris"))
     open_detailed_Paris_btn.addEventListener("click", function() {
         document.getElementById("map-detailed-Paris").style.visibility="visible";
-        document.getElementById("map-phone-mask").style.visibility="visible";
+        // document.getElementById("map-phone-mask").style.visibility="visible";
 
     });
     
     var close_detailed_Paris_btn = document.getElementById(("map-detailed-Paris-close-btn"))
+    const socket = io();
+    socket.emit('requestLiveData');
+
     close_detailed_Paris_btn.addEventListener("click", function() {
-
+        socket.emit('LiveData', 1)
         document.getElementById("map-detailed-Paris").style.visibility="hidden";
-        document.getElementById("map-phone-mask").style.visibility="hidden";
-
-    });
-
-    
-    document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
-        window.location.href = 'map.html';
-    });
-
-    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
-        window.location.href = 'detect.html';
-    });
-
-    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
         window.location.href = 'home.html';
     });
 
+    
 </script>
+<script src="link.js"></script>
+
 </html>

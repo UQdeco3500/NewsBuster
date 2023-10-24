@@ -1,0 +1,4 @@
+npm i mysql2@2.3.3
+sudo npm i -g forever
+
+https://blog.logrocket.com/running-node-js-scripts-continuously-forever/#:~:text=What%20is%20forever%3F,Node%20applications%20and%20their%20processes.

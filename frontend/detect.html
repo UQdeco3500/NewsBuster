@@ -15,10 +15,10 @@
 
     <title>Mobile & Social</title>
 </head>
-<body class="background">
-    <div class="iphone-x">
+<body>
+    <div id="body-div">
         <div class="iphone-mask" id="detect-phone-mask"></div>
-        <div class="rounded rounded-pill shadow-sm detect-search">
+        <div class="detect-search">
             <h5> AI ART DETECTION</h5>
         </div>
 
@@ -44,24 +44,24 @@
                                   <span class="progress-bar border-primary"></span>
                     </span>
                     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                      <div class="h6 font-weight-bold">90<sup class="small">%</sup></div>
+                      <div id='pre_value' class="h6 font-weight-bold">90<sup class="small">%</sup></div>
                     </div>
                   </div>
             </div>
             <div class="detect-report-container">
-                <div class="card detect-art-profile">
+                <div class="card detect-art-profile" style="background-color: rgb(187, 231, 255, 0.8);">
                     <div class="card-body">
                         <p class="card-text">Artist:</p>
-                      <p class="card-text">Vincent van Gogh</p>
+                      <p id= "artist-name" class="card-text">Vincent van Gogh</p>
                     </div>
-                    <img class="card-img-top" src="img/home/profile_1.png" alt="Card image cap">
+                    <img id= "profile_img" class="card-img-top" src="img/detect/profile_1.png" alt="Card image cap">
                 </div>
 
-                <div class="card detect-art-profile detect-art-title">
+                <div class="card detect-art-profile detect-art-title" style="background-color: rgba(255, 241, 204, 0.8);">
                     <div class="card-body">
                         <p class="card-text">Title:</p>
 
-                      <p class="card-text">Starry Night</p>
+                      <p id = "art-title" class="card-text">Starry Night</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
 
             <div class="detect-report-container detect-report-share">
                
-                <div class="card detect-art-profile detect-art-title">
+                <div class="card detect-art-profile detect-art-title" style="background-color: #FFD0EF;">
                     <div class="card-body">
                         <p class="card-text">Date:</p>
 
@@ -77,9 +77,16 @@
                     </div>
                 </div>
 
+                <div class="card detect-art-profile detect-art-title" id="detect-publish" style="background-color: rgba(125, 215, 82, 0.8);">
+                    <div class="card-body">
+                        <p class="card-text">Publish Results</p>
+
+                    </div>
+                </div>
+
                 <div class="card detect-art-profile detect-art-title" id="detect-again-btn">
                     <div class="card-body" >
-                      <p class="card-text">Detect again</p>
+                      <p class="card-text" style="color: #FFFFFF;">Detect again</p>
                     </div>
                 </div>
 
@@ -110,7 +117,7 @@
 
 
         <div class="map-art-info detect-art " id="detect-detection">
-            <a href="#" class="btn btn-link text-primary" id="detect-cancel"><i class="fa fa-times-circle-o"></i></a>
+            <a href="#" class="btn btn-link text-primary publish-cancel" id="detect-process-cancel"><i class="fa fa-times-circle-o"></i></a>
             <div class="card">
                 <img class="card-img-top" id="detect-detection-img" src="img/map/Paris.png" alt="Card image cap">
                 <div class="card-body">
@@ -122,6 +129,27 @@
                 </div>
             </div>
         </div>
+
+        <div class="map-art-info detect-art " id="publish-result">
+            <div class="card">
+                <a href="#" class="btn btn-link text-primary publish-cancel" id="detect-publish-cancel"><i class="fa fa-times-circle-o"></i></a>
+
+                <div class="card-body" style="flex-direction: column;">
+                    <h3>Published</h3>
+                    <h5>See this on your feed page.</h5>
+                </div>
+                <img class="card-img-top" id="detect-detection-publish-img" src="img/map/Paris.png" alt="Card image cap">
+                <div class="card-body">
+                    <button class="button" id="view_publish_result">
+                        <span class="submit">View</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+
+
 
 
         <div class="icons">
@@ -139,7 +167,7 @@
             </div>
             <div class= "icon icon-r">
                 <img src="img/icon/profile page.png">
-                <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+                <img class= "hover_img hover_img-rr" src="img/icon/profile page (hovered colour).png">
             </div>
         </div>
     </div>
@@ -179,7 +207,7 @@
         document.getElementById("detect-menu").style.visibility="hidden";
     });
 
-    var cancel_detection_btn = document.getElementById(("detect-cancel"))
+    var cancel_detection_btn = document.getElementById(("detect-process-cancel"))
     cancel_detection_btn.addEventListener("click", function() {
         document.getElementById("detect-phone-mask").style.visibility="hidden";
         document.getElementById("detect-detection").style.visibility="hidden";
@@ -197,21 +225,6 @@
         document.getElementById("detect-detection").style.visibility="hidden";
 
     });
-    
-
-    document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
-        window.location.href = 'map.html';
-    });
-
-    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
-        window.location.href = 'detect.html';
-    });
-
-    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
-        window.location.href = 'home.html';
-    });
-
-
   
     var detect_again = document.getElementById(("detect-again-btn"))
     detect_again.addEventListener("click", function() {
@@ -224,13 +237,28 @@
 
     });
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
     $(".progress").each(function() {   
 
-        var value = $(this).attr('data-value');
+        const titles = ["Starry Night", "Whispers of Serenity", "Crimson Dreamscape", "Dancing in Moonlight", "Azure Reverie"]
+        const artists = ["Isabella Montclair", "Rafael Aragon", "Victoria Larkspur", "Xavier Dufresne", "Lucien Rousseau"]
+        const profiles = ["profile_1", "Rafael Aragon", "Victoria Larkspur", "Xavier Dufresne", "Lucien Rousseau"]
+
+        // var value = $(this).attr('data-value');
         var left = $(this).find('.progress-left .progress-bar');
         var right = $(this).find('.progress-right .progress-bar');
-        console.log(value)
 
+        var value = getRandomInt(100)
+
+        document.getElementById("pre_value").innerHTML = value
+        document.getElementById("art-title").innerHTML = titles[getRandomInt(5)]
+        document.getElementById("artist-name").innerHTML = artists[getRandomInt(5)]
+        document.getElementById("profile_img").src = "./img/detect/profile_" + getRandomInt(5) + ".png"
+
+    
         if (value > 0) {
             if (value <= 50) {
             right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
@@ -265,6 +293,7 @@
             document.getElementById("detect-detection-img").src = uploaded_url;
             document.getElementById("detect-menu").style.visibility="hidden";
             document.getElementById("detect-detection").style.visibility="visible";
+
         
             // Loading
             button.classList.toggle('active');
@@ -275,15 +304,36 @@
 
             // change image
             document.getElementById('detect-res-img').src = uploaded_url;
+            document.getElementById('detect-detection-publish-img').src = uploaded_url;
+
 
             uploaded_url = ''
         }
 
 
     });
+    
+    
 }
+    
+
+    document.getElementById("detect-publish").addEventListener("click", function(){
+        document.getElementById("publish-result").style.visibility = "visible"
+    });
+
+    document.getElementById("view_publish_result").addEventListener("click", function(){
+        window.location.href = 'home.html';
+    });
+
+
+    document.getElementById("detect-publish-cancel").addEventListener("click", function(){
+        document.getElementById("publish-result").style.visibility = "hidden"
+    });
+
 
 </script>
+<script src="link.js"></script>
+
 </html>
 
 

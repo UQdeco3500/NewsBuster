@@ -11,15 +11,13 @@
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <link rel="stylesheet" href="css/live.css"/>
     <script src="leaflet/leaflet.js"></script>
-    <script src="link.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <title>Mobile & Social</title>
 </head>
 <body class="background">
-    <div id='end-button'><p>End session</p></div>
-    <div class="iphone-x">
-        <div class="iphone-mask" id="detect-phone-mask"></div>
+    <!-- <div class="iphone-x">
+        <div class="iphone-mask" id="detect-phone-mask"></div> -->
 
         <div id="overlay">
         </div>
@@ -40,6 +38,48 @@
             <p id="success-view-button">View</p>
         </div>
 
+        <div class="message" id="where-info">
+            <img class="live-close" src="img/icon/close.png">
+            <p id="success-line1">The artwork is located......</p>
+            <div></div>
+            <img class="gallary_map" src="img/Gallery.jpeg">
+            <h3>Level 3</h3>
+        </div>
+
+        <div class="message" id="users-info">
+            <img id="user-info-close" src="img/icon/close.png">
+
+            <div class="user-icon-con">
+                <p>5</p>
+                <img id="users-info-icon" src="img/live/users.png">
+            </div>
+            <div class="card flex-row flex-wrap">
+                <div class="card-header" >
+                    <img id="my_profile" src="./img/home/profile_1.png" alt="">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">You</h4>
+                </div>
+            </div>
+            <div class="card flex-row flex-wrap">
+                <div class="card-header">
+                    <img src="./img/home/profile_2.png" alt="">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">Selina Jane</h4>
+                </div>
+            </div>
+            <div class="card flex-row flex-wrap">
+                <div class="card-header">
+                    <img src="./img/home/profile_3.png" alt="">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">Anonymous user 1</h4>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="go-anonymous">Go Anonymous</button> 
+        </div>
+
         <div class="message" id="end-message">
             <img class="live-close" src="img/icon/close.png">
             <p id="end-line1">Session ended</p>
@@ -51,9 +91,26 @@
             <p id="end-done-button">Done</p>
         </div>
 
+        <div id="camera-div">
+            <div id="camera-roll-button"></div>
+            <div id="take-photo-button"></div>
+            <img id="camera-screen-img" src="img/live/camera-screen.png">
+        </div>
+
+        <div id="camera-roll-div">
+            <div id="camera-roll-cancel"></div>
+            <div class="photo-select" id="camera-roll-art-1"></div>
+            <div class="photo-select" id="camera-roll-art-2"></div>
+            <div class="photo-select" id="camera-roll-art-3"></div>
+            <div class="photo-select" id="camera-roll-art-4"></div>
+            <div class="photo-select" id="camera-roll-art-5"></div>
+            <div class="photo-select" id="camera-roll-art-no-similarity"></div>
+            <img id="camera-screen-img" src="img/live/camera-roll-screen.png">
+        </div>
+
         <div class="live-container">
+            <img id="go-back-icon" src="img/live/go-back.png">
             <div class="live-bar">
-                <img id="go-back-icon" src="img/live/go-back.png">
                 <div id="user-count">
                     <img id="live-icon" src="img/live/live.png">
                     <div>
@@ -65,19 +122,24 @@
             <p id="desc">Share your favourite artwork!</p>
             <div class="live-img-container">
                 <label id="upload-button" for="upload-img">
-                    <input type="file" name="upload-img" id="upload-img" style="display:none;"/>
+                    <!-- <input type="file" name="upload-img" id="upload-img" style="display:none;"/> -->
                     <img id='camera-icon' src="img/live/camera-plus.png">
                 </label>
+                <div class="user-count-container" id="art1-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art1-live" class="live-img" style="border-color: #FFF1CC;" src=img/live/gallery/art1.jpeg><div class="img-user-count"><p id="art1-live-count">5</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art2-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art2-live" class="live-img" style="border-color: #D6F1FF;" src=img/live/gallery/art2.jpeg><div class="img-user-count"><p id="art2-live-count">2</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art3-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art3-live" class="live-img" style="border-color: #FFF1CC;" src=img/live/gallery/art3.jpeg><div class="img-user-count"><p id="art3-live-count">1</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art4-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art4-live" class="live-img" style="border-color: #D6F1FF;" src=img/live/gallery/art4.jpeg><div class="img-user-count"><p id="art4-live-count">1</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art5-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art5-live" class="live-img" style="border-color: #FFF1CC;" src=img/live/gallery/art5.jpeg><div class="img-user-count"><p id="art5-live-count">1</p><img src="img/live/users.png"></div></div></div>
             </div>
         </div>
-
+        <div id='end-button'><p>End event</p></div>
         <!-- navigation bar -->
         <div class="icons">
             <div class= "icon icon-l">
                 <img class= "non_hover"  src="img/icon/Gallery.png">                
                 <img href="map.html" class= "hover_img hover_img-l" src="img/icon/Gallery (hovered colour).png">
             </div>
-            <div class= "icon icon-l-m">
+            <div class= "icon icon-l-m cur-icon">
                 <img src="img/icon/Home.png">
                 <img class= "hover_img hover_img-m" src="img/icon/Home (hovered colour).png">
             </div>
@@ -87,111 +149,151 @@
             </div>
             <div class= "icon icon-r">
                 <img src="img/icon/profile page.png">
-                <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+                <img class= "hover_img hover_img-rr" src="img/icon/profile page (hovered colour).png">
             </div>
         </div>
     </div>
 
 </body>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
 <script>
+    var database_data = []
+    const upload_color = '#FFE3F5'
+    const random_color = ['#D6F1FF']
+
+    function set_border_color(){
+        for (let i = 1; i < 6; i++) {
+            document.getElementById('art' + i + '-live').style.borderColor = random_color[getRandomIndex(0, 1)]
+    }
+    }
+
+    function getRandomIndex(min, max) {
+        return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+    }
+
+    function art_size(JSON_data) {
+
+        database_data.push(JSON_data)
+
+        var width = JSON_data['width']
+        var image_id = "img/live/gallery/art" + JSON_data['id'] + ".jpeg"
+        var html_id = "art" + JSON_data['id'] + '-live'
+        var count_id = 'art' + JSON_data['id'] + '-live-count'
+        var container_id = "art" + JSON_data['id'] + "-container"
+        document.getElementById(html_id).style.width = width + 'vh';
+        document.getElementById(count_id).innerHTML = JSON_data['user_count']
+        if(JSON_data['user_count'] > 0){
+            document.getElementById(container_id).style.opacity = 1;
+        }
+    }
+
+
+    function update_shared_img(index){
+        let art_index = index + 1
+        var inputData = document.getElementById('art' + art_index + '-live-count').innerHTML;
+        socket.emit('userData', database_data[index])
+        document.getElementById(`camera-roll-div`).style.display = 'none';
+        
+        database_data[index].user_count = database_data[index].user_count + 1
+        database_data[index].width = database_data[index].width + 1
+        art_size(database_data[index])
+
+        set_border_color()
+        document.getElementById('art' + art_index + '-live').style.borderColor = upload_color
+        document.getElementById('success-message').style.display = 'block'
+    }
+
+
+    set_border_color()
+    const socket = io();
+    // Request database data when the client connects
+    socket.emit('requestDatabaseData');
+
+    socket.on('databaseData', (data) => {
+        console.log('Received database data:', data);
+    // Handle the received data here    
+        data.forEach(art_size);
+    });
+
     var galleryImgs = [
         {
             "path": "art1.jpeg",
-            "user-count": 0,
+            "user-count": 5,
             "id": "art1-live",
-            "width": 5
+            "width": 15
         },
         {
             "path": "art2.jpeg",
-            "user-count": 0,
+            "user-count": 2,
             "id": "art2-live",
-            "width": 5
+            "width": 12
         },
         {
             "path": "art3.jpeg",
-            "user-count": 0,
+            "user-count": 1,
             "id": "art3-live",
-            "width": 5
+            "width": 11
         },
         {
             "path": "art4.jpeg",
             "user-count": 0,
             "id": "art4-live",
-            "width": 5
+            "width": 10
         },
         {
             "path": "art5.jpeg",
             "user-count": 0,
             "id": "art5-live",
-            "width": 5
+            "width": 10
         }
     ]
+    
 
-    function getRandomIndex(min, max) {
-        return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-    }
+
     
     const imgInput = document.getElementById("upload-img");
     var interactionInterval;
     var viewers;
 
-    imgInput.addEventListener('change', () => {
-        var parts = imgInput.value.split("\\");
-        var result = parts[parts.length - 1];
-        let reader = new FileReader();
-        reader.readAsDataURL(imgInput.files[0]);
-        reader.addEventListener("load", () => {
-            var detectedArtwork = galleryImgs.filter(image => image["path"] == result)[0];
-            if (detectedArtwork === undefined){
-                // Display pop-up to show no similarity
-                document.getElementById('overlay').style.display = "block";
-                document.getElementById("no-similarity-message").style.display = "block"
-            }
-            else{
-                //Diplay pop-up to communicate success
-                document.getElementById('overlay').style.display = "block";
-                document.getElementById("success-message").style.display = "block";
+    document.getElementById('camera-roll-button').addEventListener('click', function(){
+        document.getElementById('camera-roll-div').style.display = "block";
+        document.getElementById('camera-div').style.display = "none";
+    })
+    document.getElementById('camera-roll-cancel').addEventListener('click', function(){
+        document.getElementById('camera-roll-div').style.display = "none";
+        document.getElementById('camera-div').style.display = "block";
+    })
 
-                document.getElementById("upload-button").style.display = "none"; // Remove upload button if the image is received successfully
-                console.log("image detected");
-                detectedArtwork["user-count"]+=1;
-                if (document.getElementById(detectedArtwork["id"])){
-                    // Increase width of the user uploaded photo
-                    if (detectedArtwork["width"]<10){
-                        detectedArtwork["width"]+=0.5;
-                    }
-                    document.getElementById(detectedArtwork['id']).style.width=`${detectedArtwork["width"]}vw`;
-                    // Set class name to change stlying of the image border
-                    document.getElementById(detectedArtwork["id"]).classList.add("current-user");
-                    // Update the user counter
-                    document.getElementById(`${detectedArtwork["id"]}-count`).innerHTML = detectedArtwork["user-count"];
-                    // Show pop-up
-                }
-                else{
-                    document.getElementsByClassName("live-img-container")[0].innerHTML+=`<div class="user-count-container"><img id=${detectedArtwork["id"]} class="live-img current-user" src=img/live/gallery/${detectedArtwork["path"]}><div class="img-user-count"><p id=${detectedArtwork['id']}-count>${detectedArtwork['user-count']}</p><img src="img/live/users.png"></div></div>`;
-                    // Show pop-up
-                };
+    document.getElementById('take-photo-button').addEventListener('click', function(){
+        update_shared_img(0)
+        document.getElementById('camera-div').style.display = "none";
+    })
 
-                interactionInterval = setInterval(function(){
-                var artwork = galleryImgs[getRandomIndex(0,5)];
-                artwork["user-count"]+=1;
-                if (document.getElementById(artwork["id"])){
-                    // Increase width of the user uploaded photo
-                    if (artwork["width"]<10){
-                        artwork["width"]+=0.25;
-                    }
-                    document.getElementById(artwork['id']).style.width=`${artwork["width"]}vw`;
-                    // Update the user counter
-                    document.getElementById(`${artwork["id"]}-count`).innerHTML = artwork["user-count"];
-                    // Show pop-up
-                }
-                else{
-                    document.getElementsByClassName("live-img-container")[0].innerHTML+=`<div class="user-count-container"><img id=${artwork["id"]} class="live-img" src=img/live/gallery/${artwork["path"]}><div class="img-user-count"><p id=${artwork['id']}-count>${artwork['user-count']}</p><img src="img/live/users.png"></div></div>`;
-                    // Show pop-up
-                };
-                }, 3000);
-            }
-        });
+    document.getElementById('camera-icon').addEventListener('click', function(){
+        document.getElementById('camera-div').style.display = "block";
+    })
+
+    for (let i = 0; i < 5; i++) {
+        let art_index_id = i + 1
+        document.getElementById("camera-roll-art-" + art_index_id).addEventListener('click', function(){
+            update_shared_img(i)
+        })
+    }
+
+    where_ = document.getElementsByClassName('see-where')
+    for (let i = 0; i < where_.length; i++) {
+        where_[i].addEventListener('click', function(){
+            document.getElementById("where-info").style.display = 'block'
+        })
+    }
+
+    document.getElementById("camera-roll-art-no-similarity").addEventListener('click', function(){
+        const inputData = document.getElementById(`art1-live-count`).innerHTML;
+        socket.emit('userData', database_data[0])
+        document.getElementById('no-similarity-message').style.display = 'none'
+
+        location.reload();
     })
 
     var countChange = setInterval(function(){
@@ -212,28 +314,21 @@
         document.getElementById('success-message').style.display = "none";
     })
 
+    document.getElementById('end-done-button').addEventListener('click', function(){
+        document.getElementById('overlay').style.display = "none";
+        document.getElementById('end-message').style.display = "none";
+    })
+
     document.getElementById('error-back-button').addEventListener('click', function(){
         document.getElementById('overlay').style.display = "none";
         document.getElementById('no-similarity-message').style.display = "none";
     })
 
     document.getElementById('end-button').addEventListener('click', function(){
-        clearInterval(interactionInterval);
-        clearInterval(countChange);
+      
+        socket.emit('LiveData', 0)
+        window.location.href = 'home.html';
 
-        // Map the user counts of each artwork
-        var countArray = galleryImgs.map((artwork)=> artwork['user-count']);
-        var winningCount = Math.max(...countArray);
-        var winningArtwork = galleryImgs.filter(artwork => artwork["user-count"] === winningCount)[0];
-        
-        document.getElementById("winning-img").src = `img/live/gallery/${winningArtwork["path"]}`;
-        document.getElementById("end-line4").innerHTML += viewers;
-        document.getElementById("end-line5").innerHTML += countArray.reduce((num1, num2) => num1 + num2, 0)
-
-        //Diplay pop-up to signal end of session
-
-        document.getElementById('overlay').style.display = "block";
-        document.getElementById("end-message").style.display = "block";
     })
 
     document.getElementsByClassName('hover_img-l')[0].addEventListener('click', function() {
@@ -248,13 +343,38 @@
                 });
             })
         });
-
-    document.getElementsByClassName('hover_img-r')[0].addEventListener('click', function() {
-        window.location.href = 'detect.html';
-    });
-
-    document.getElementsByClassName('hover_img-m')[0].addEventListener('click', function() {
+    
+    document.getElementById("go-back-icon").addEventListener('click', function(){
         window.location.href = 'home.html';
-    });
+
+    })
+
+    user_count_icons = document.getElementsByClassName("img-user-count")
+
+    for(let i=0; i<user_count_icons.length; i++){
+        user_count_icons[i].addEventListener('click', function(){
+    
+            document.getElementById('users-info').style.visibility = "visible";
+        })
+    }
+
+    document.getElementById("go-anonymous").addEventListener('click', function(){
+        document.getElementById('my_profile').style.webkitFilter = 'grayscale(100%)'
+        document.getElementById('my_profile').style.filter = 'grayscale(100%)'
+
+    })
+
+
+    
+
+    document.getElementById("user-info-close").addEventListener('click', function(){
+      
+        document.getElementById('users-info').style.visibility = "hidden";
+    })
+
+    
+    
 </script>
+<script src="link.js"></script>
+
 </html>
