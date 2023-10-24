@@ -117,7 +117,7 @@
 
 
         <div class="map-art-info detect-art " id="detect-detection">
-            <a href="#" class="btn btn-link text-primary" id="detect-cancel"><i class="fa fa-times-circle-o"></i></a>
+            <a href="#" class="btn btn-link text-primary publish-cancel" id="detect-process-cancel"><i class="fa fa-times-circle-o"></i></a>
             <div class="card">
                 <img class="card-img-top" id="detect-detection-img" src="img/map/Paris.png" alt="Card image cap">
                 <div class="card-body">
@@ -131,13 +131,14 @@
         </div>
 
         <div class="map-art-info detect-art " id="publish-result">
-            <a href="#" class="btn btn-link text-primary publish-cancel" id="detect-cancel"><i class="fa fa-times-circle-o"></i></a>
             <div class="card">
+                <a href="#" class="btn btn-link text-primary publish-cancel" id="detect-publish-cancel"><i class="fa fa-times-circle-o"></i></a>
+
                 <div class="card-body" style="flex-direction: column;">
                     <h3>Published</h3>
                     <h5>See this on your feed page.</h5>
                 </div>
-                <img class="card-img-top" id="detect-detection-img" src="img/map/Paris.png" alt="Card image cap">
+                <img class="card-img-top" id="detect-detection-publish-img" src="img/map/Paris.png" alt="Card image cap">
                 <div class="card-body">
                     <button class="button" id="view_publish_result">
                         <span class="submit">View</span>
@@ -206,7 +207,7 @@
         document.getElementById("detect-menu").style.visibility="hidden";
     });
 
-    var cancel_detection_btn = document.getElementById(("detect-cancel"))
+    var cancel_detection_btn = document.getElementById(("detect-process-cancel"))
     cancel_detection_btn.addEventListener("click", function() {
         document.getElementById("detect-phone-mask").style.visibility="hidden";
         document.getElementById("detect-detection").style.visibility="hidden";
@@ -303,6 +304,7 @@
 
             // change image
             document.getElementById('detect-res-img').src = uploaded_url;
+            document.getElementById('detect-detection-publish-img').src = uploaded_url;
 
 
             uploaded_url = ''
@@ -314,6 +316,7 @@
     
 }
     
+
     document.getElementById("detect-publish").addEventListener("click", function(){
         document.getElementById("publish-result").style.visibility = "visible"
     });
@@ -322,9 +325,11 @@
         window.location.href = 'home.html';
     });
 
-    document.getElementsByClassName("publish-cancel")[0].addEventListener("click", function(){
+
+    document.getElementById("detect-publish-cancel").addEventListener("click", function(){
         document.getElementById("publish-result").style.visibility = "hidden"
     });
+
 
 </script>
 <script src="link.js"></script>

@@ -38,6 +38,48 @@
             <p id="success-view-button">View</p>
         </div>
 
+        <div class="message" id="where-info">
+            <img class="live-close" src="img/icon/close.png">
+            <p id="success-line1">The artwork is located......</p>
+            <div></div>
+            <img class="gallary_map" src="img/Gallery.jpeg">
+            <h3>Level 3</h3>
+        </div>
+
+        <div class="message" id="users-info">
+            <img id="user-info-close" src="img/icon/close.png">
+
+            <div class="user-icon-con">
+                <p>5</p>
+                <img id="users-info-icon" src="img/live/users.png">
+            </div>
+            <div class="card flex-row flex-wrap">
+                <div class="card-header">
+                    <img src="./img/home/profile_1.png" alt="">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">You</h4>
+                </div>
+            </div>
+            <div class="card flex-row flex-wrap">
+                <div class="card-header">
+                    <img src="./img/home/profile_2.png" alt="">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">Selina Jane</h4>
+                </div>
+            </div>
+            <div class="card flex-row flex-wrap">
+                <div class="card-header">
+                    <img src="./img/home/profile_3.png" alt="">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">Anonymous user 1</h4>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary go-anonymous">Go Anonymous</button> 
+        </div>
+
         <div class="message" id="end-message">
             <img class="live-close" src="img/icon/close.png">
             <p id="end-line1">Session ended</p>
@@ -83,12 +125,11 @@
                     <!-- <input type="file" name="upload-img" id="upload-img" style="display:none;"/> -->
                     <img id='camera-icon' src="img/live/camera-plus.png">
                 </label>
-                <div class="user-count-container" id="art1-container"><img id="art1-live" class="live-img" src=img/live/gallery/art1.jpeg><div class="img-user-count"><p id="art1-live-count">5</p><img src="img/live/users.png"></div></div>
-                <div class="user-count-container" id="art2-container"><img id="art2-live" class="live-img" src=img/live/gallery/art2.jpeg><div class="img-user-count"><p id="art2-live-count">2</p><img src="img/live/users.png"></div></div>
-                <div class="user-count-container" id="art3-container"><img id="art3-live" class="live-img" src=img/live/gallery/art3.jpeg><div class="img-user-count"><p id="art3-live-count">1</p><img src="img/live/users.png"></div></div>
-                <div class="user-count-container" id="art4-container"><img id="art4-live" class="live-img" src=img/live/gallery/art4.jpeg><div class="img-user-count"><p id="art4-live-count">1</p><img src="img/live/users.png"></div></div>
-                <div class="user-count-container" id="art5-container"><img id="art5-live" class="live-img" src=img/live/gallery/art5.jpeg><div class="img-user-count"><p id="art5-live-count">1</p><img src="img/live/users.png"></div></div>
-
+                <div class="user-count-container" id="art1-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art1-live" class="live-img" style="border-color: #FFF1CC;" src=img/live/gallery/art1.jpeg><div class="img-user-count"><p id="art1-live-count">5</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art2-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art2-live" class="live-img" style="border-color: #D6F1FF;" src=img/live/gallery/art2.jpeg><div class="img-user-count"><p id="art2-live-count">2</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art3-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art3-live" class="live-img" style="border-color: #FFF1CC;" src=img/live/gallery/art3.jpeg><div class="img-user-count"><p id="art3-live-count">1</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art4-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art4-live" class="live-img" style="border-color: #D6F1FF;" src=img/live/gallery/art4.jpeg><div class="img-user-count"><p id="art4-live-count">1</p><img src="img/live/users.png"></div></div></div>
+                <div class="user-count-container" id="art5-container"><div class="user-count-container-container"><button type="button" class="btn btn-primary see-where">See where this is</button> <img id="art5-live" class="live-img" style="border-color: #FFF1CC;" src=img/live/gallery/art5.jpeg><div class="img-user-count"><p id="art5-live-count">1</p><img src="img/live/users.png"></div></div></div>
             </div>
         </div>
         <div id='end-button'><p>End event</p></div>
@@ -108,7 +149,7 @@
             </div>
             <div class= "icon icon-r">
                 <img src="img/icon/profile page.png">
-                <img class= "hover_img hover_img-r" src="img/icon/profile page (hovered colour).png">
+                <img class= "hover_img hover_img-rr" src="img/icon/profile page (hovered colour).png">
             </div>
         </div>
     </div>
@@ -118,6 +159,18 @@
 
 <script>
     var database_data = []
+    const upload_color = '#FFE3F5'
+    const random_color = ['#D6F1FF', '#FFF1CC']
+
+    function set_border_color(){
+        for (let i = 1; i < 6; i++) {
+            document.getElementById('art' + i + '-live').style.borderColor = random_color[getRandomIndex(0, 2)]
+    }
+    }
+
+    function getRandomIndex(min, max) {
+        return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+    }
 
     function art_size(JSON_data) {
 
@@ -136,6 +189,23 @@
     }
 
 
+    function update_shared_img(index){
+        let art_index = index + 1
+        var inputData = document.getElementById('art' + art_index + '-live-count').innerHTML;
+        socket.emit('userData', database_data[index])
+        document.getElementById(`camera-roll-div`).style.display = 'none';
+        
+        database_data[index].user_count = database_data[index].user_count + 1
+        database_data[index].width = database_data[index].width + 1
+        art_size(database_data[index])
+
+        set_border_color()
+        document.getElementById('art' + art_index + '-live').style.borderColor = upload_color
+        document.getElementById('success-message').style.display = 'block'
+    }
+
+
+    set_border_color()
     const socket = io();
     // Request database data when the client connects
     socket.emit('requestDatabaseData');
@@ -145,8 +215,6 @@
     // Handle the received data here
     
         data.forEach(art_size);
-
-
     });
 
     var galleryImgs = [
@@ -181,10 +249,9 @@
             "width": 10
         }
     ]
+    
 
-    function getRandomIndex(min, max) {
-        return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-    }
+
     
     const imgInput = document.getElementById("upload-img");
     var interactionInterval;
@@ -200,51 +267,35 @@
     })
 
     document.getElementById('take-photo-button').addEventListener('click', function(){
-        const inputData = document.getElementById(`art1-live-count`).innerHTML;
-        socket.emit('userData', database_data[0])
-        location.reload();
-    })
-
-    document.getElementById('take-photo-button').addEventListener('mousedown', function(){
-        document.getElementById('camera-screen-img').src = "img/live/camera-screen-clicked.png";
+        update_shared_img(0)
+        document.getElementById('camera-div').style.display = "none";
     })
 
     document.getElementById('camera-icon').addEventListener('click', function(){
         document.getElementById('camera-div').style.display = "block";
     })
 
-    document.getElementById("camera-roll-art-1").addEventListener('click', function(){
-        const inputData = document.getElementById(`art1-live-count`).innerHTML;
-        socket.emit('userData', database_data[0])
-        location.reload();
-    })
-    document.getElementById("camera-roll-art-2").addEventListener('click', function(){
-        const inputData = document.getElementById(`art2-live-count`).innerHTML;
-        socket.emit('userData', database_data[1])
-        location.reload();
-    })
-    document.getElementById("camera-roll-art-3").addEventListener('click', function(){
-        const inputData = document.getElementById(`art3-live-count`).innerHTML;
-        socket.emit('userData', database_data[2])
-        location.reload();
-    })
-    document.getElementById("camera-roll-art-4").addEventListener('click', function(){
-        const inputData = document.getElementById(`art4-live-count`).innerHTML;
-        socket.emit('userData', database_data[3])
-        location.reload();
-    })
-    document.getElementById("camera-roll-art-5").addEventListener('click', function(){
-        const inputData = document.getElementById(`art5-live-count`).innerHTML;
-        socket.emit('userData', database_data[4])
-        location.reload();
-    })
+    for (let i = 0; i < 5; i++) {
+        let art_index_id = i + 1
+        document.getElementById("camera-roll-art-" + art_index_id).addEventListener('click', function(){
+            update_shared_img(i)
+        })
+    }
+
+    for (let i = 0; i < 5; i++) {
+        let art_index_id = i + 1
+        document.getElementById("art" + art_index_id + "-container").addEventListener('click', function(){
+            document.getElementById("where-info").style.display = 'block'
+        })
+    }
+
     document.getElementById("camera-roll-art-no-similarity").addEventListener('click', function(){
         const inputData = document.getElementById(`art1-live-count`).innerHTML;
         socket.emit('userData', database_data[0])
+        document.getElementById('no-similarity-message').style.display = 'none'
+
         location.reload();
     })
-
-
 
     var countChange = setInterval(function(){
         var randomChange = getRandomIndex(0,10);
@@ -311,6 +362,26 @@
 
     })
 
+    user_count_icons = document.getElementsByClassName("users-icon")
+
+    for(let i=0; i<user_count_icons; i++){
+        user_count_icons[i].addEventListener('click', function(){
+            document.getElementById('users-info').style.visibility = "visible";
+        })
+    }
+
+    document.getElementsByClassName("go-anonymous")[0].addEventListener('click', function(){
+        document.getElementById('users-info').style.visibility = "hidden";
+    })
+
+    document.getElementById("user-info-close").addEventListener('click', function(){
+      
+        document.getElementById('users-info').style.visibility = "hidden";
+    })
+
+    
+
+    
     
 </script>
 <script src="link.js"></script>

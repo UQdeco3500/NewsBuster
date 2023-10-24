@@ -514,3 +514,124 @@
 #art3-live{
   width: 11vh;
 }
+
+.user-count-container:hover .live-img{
+  filter: grayscale(90%);
+}
+
+.user-count-container:hover .img-user-count{
+    border: 1px #FFF1CC solid;
+    
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink { 50% { border-color:#fff ; }  }
+
+
+.user-count-container:hover .see-where{
+  visibility: visible;
+}
+
+.see-where{
+  position: absolute;
+  z-index: 4;
+  font-size: 0.4rem;
+  background-color: #FFF;
+  color: var(--theme-color);
+  pointer-events: none;
+  border-color: #FFF;
+  visibility: hidden;
+}
+
+.user-count-container-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#where-info{
+  z-index: 5;
+  display: none;
+  text-align: center;
+  width:40vh;
+  height:50vh;
+  margin-top: 5vh;
+}
+
+.gallary_map{
+  width: 25vh;
+}
+
+#users-info{
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width:40vh;
+  height:50vh;
+}
+
+#users-info-icon {
+  width: 5vw;
+}
+
+.user-icon-con{
+  height: 15vw;
+  width: 15vw;
+  border-radius: 100%;
+  border: solid;
+  border-color: var(--theme-color);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-icon-con p{
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#users-info .card img{
+  width: 15vw;
+}
+
+#users-info .card .card-block{
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#users-info .card{
+  border-radius: 8px;
+  background: #F8F8F8;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#users-info .card h4{
+  font-size: 1rem;
+}
+
+.go-anonymous{
+  z-index: 4;
+  font-size: 0.8rem;
+  background-color: #FFF;
+  color: var(--theme-color);
+  border-radius: 8px;
+  border: 1px solid #2E5A88;
+}
+
+#user-info-close{
+  position: absolute;
+  right:2vh;
+  top:2vh;
+  background-color: white;
+  border-radius: 2vh;
+  width:3vh;
+  cursor:pointer;
+  object-fit: contain;
+}
