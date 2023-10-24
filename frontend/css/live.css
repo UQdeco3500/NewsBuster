@@ -520,7 +520,7 @@
 }
 
 .user-count-container:hover .img-user-count{
-    border: 1px #FFF1CC solid;
+    border: 1px red solid;
     
     animation: blink 1s;
     animation-iteration-count: infinite;
