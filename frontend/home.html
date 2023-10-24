@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/live.css">
     <link rel="stylesheet" href="css/content.css">
-    <link rel="stylesheet" href="css/art_details.css">
+    <!-- <link rel="stylesheet" href="css/art_details.css"> -->
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
 
     <title>Mobile & Social</title>
     </head>
@@ -172,7 +174,20 @@
 
   })
 
-  
+  function open_life(data){
+    if(data.is_life === 1){
+      // Generate_life
+      document.getElementsByClassName('live-card')[0].style.display = 'block';
+    }
+  }
+
+  const socket = io();
+  socket.emit('requestLifeData');
+  socket.on('LifeDatabaseData', (data) => {
+        data.forEach(open_life);
+  });
+
+
   
     
 </script>

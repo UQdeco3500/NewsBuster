@@ -52,7 +52,6 @@ io.on('connection', (socket) => {
 
 
   socket.on('userData',userData=>{
-
     db.query('UPDATE arts SET user_count = ?, width = ? WHERE id = ?', [userData.user_count + 1, userData.width + 1, userData.id], (err, results) => {
       if (err) {
         console.error('Error updating data:', err);
@@ -63,6 +62,32 @@ io.on('connection', (socket) => {
     });
 
   });
+
+
+  socket.on('requestLifeData', () => {
+    // Query the database and emit the data
+    db.query('SELECT * from life', (err, results) => {
+      if (!err) {
+        // Emit the data to the specific client
+        console.log(results)
+        socket.emit('LifeDatabaseData', results);
+      }
+    });
+  });
+
+    // Handle the database data emission here
+    socket.on('LiveData', livedata => {
+      // Query the database and emit the data
+      console.log(livedata)
+      db.query('UPDATE life SET is_life = ? WHERE num = 1', [livedata], (err, results) => {
+        if (err) {
+          console.error('Error updating data:', err);
+        } else {
+          // Emit an event to notify connected clients about the data update
+          console.log('Updated!!!')
+        }
+      });
+    });
 });
 
 

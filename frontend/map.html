@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
     <script src="link.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
 
     <title>Mobile & Social</title>
 </head>
@@ -139,16 +142,18 @@
     var open_detailed_Paris_btn = document.getElementById(("map-contact-btn-Paris"))
     open_detailed_Paris_btn.addEventListener("click", function() {
         document.getElementById("map-detailed-Paris").style.visibility="visible";
-        document.getElementById("map-phone-mask").style.visibility="visible";
+        // document.getElementById("map-phone-mask").style.visibility="visible";
 
     });
     
     var close_detailed_Paris_btn = document.getElementById(("map-detailed-Paris-close-btn"))
+    const socket = io();
+    socket.emit('requestLiveData');
+
     close_detailed_Paris_btn.addEventListener("click", function() {
-
+        socket.emit('LiveData', 1)
         document.getElementById("map-detailed-Paris").style.visibility="hidden";
-        document.getElementById("map-phone-mask").style.visibility="hidden";
-
+        window.location.href = 'home.html';
     });
 
     
