@@ -1,6 +1,5 @@
 # NewsBuster
 
-Artificial Intelligence has shown popularity in media generation. However, there is increasing concern that AI-generated art impacts artists' creativity. For example, people use AI-generated art to win competitions which raises the concern of fairness and implies a substantial effect of limiting authentic artists’ contributions. Moreover, issues were discovered within the art community which entails the desire for social interactions during art viewing. Therefore, this application will aim to address both issues by providing an AI-free digital platform for art lovers to facilitate an authentic art community between artists. It also promotes in-person galleries so they can view authentic art in a physical space whilst fostering social interactions. This application consists of four main features, including AI detection, gallery discovery, authentic art showcasing, and live social interaction during exhibitions. 
 
 ## Getting Started
 
@@ -31,7 +30,7 @@ Artificial Intelligence has shown popularity in media generation. However, there
     unzip NewsBusters
     cd NewsBusters
 
-### Build the SQL database
+### Set up the environment through Docker
 Build the SQL database through docker-compose.yml by docker
 
     docker-compose -d docker-compose.yml up -d
